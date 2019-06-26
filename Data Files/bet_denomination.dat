@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>bet_denomination</name>
+   <tag></tag>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>c4e0cfad-8d52-40dd-9de7-0cb1db8ada11</dataFileGUID>
+   <dataSourceUrl></dataSourceUrl>
+   <driver>InternalData</driver>
+   <data>%5B500%2C+1000%2C+1500%2C+2000%2C+5000%2C+10000%2C+20000%2C+50000%2C+100000%2C+200000%5D</data>
+   <internalDataColumns>
+      <columnIndex>0</columnIndex>
+      <name>Bet Increment</name>
+      <size>1</size>
+   </internalDataColumns>
+   <isInternalPath>false</isInternalPath>
+   <query></query>
+   <secureUserAccount>false</secureUserAccount>
+   <sheetName></sheetName>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>
