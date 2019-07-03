@@ -14,6 +14,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import net.bytebuddy.implementation.bytecode.constant.NullConstant as NullConstant
 import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger
+import groovy.json.JsonSlurper
 //below for exporting to excel
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -25,6 +26,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.lang.String
 
+
 KeywordLogger log = new KeywordLogger()
 
 WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('url') : 'krug-gw-colo.star9ad.com', ('partner') : 'c304afdf-2f61-6369-c088-924f99e1be1a'
@@ -32,19 +34,22 @@ WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('url') : 'k
             , ('session_token') : GlobalVariable.session_token]))
 
 WS.sendRequestAndVerify(findTestObject('NuRGS/Login _Final', [('url') : 'nurgs.star9ad.com', ('partner') : 'c304afdf-2f61-6369-c088-924f99e1be1a'
-            , ('session_token') : GlobalVariable.session_token, ('game_code') : 'NG-1012']))
+            , ('session_token') : GlobalVariable.session_token, ('game_code') : 'NG-0063']))
 
-def features = GlobalVariable.features
 
-def features_type = GlobalVariable.features_type
-
-def free_spin_pick = GlobalVariable.free_spin_pick
-
-def free_spin_complete = GlobalVariable.free_spin_complete
-
-def free_spin_left = GlobalVariable.free_spin_left
 
 for (int i = 1; i <= 3; i++) {
+	def features = GlobalVariable.features
+	
+	def features_type = GlobalVariable.features_type
+	
+	def free_spin_pick = GlobalVariable.free_spin_pick
+	
+	def free_spin_complete = GlobalVariable.free_spin_complete
+	
+	def free_spin_left = GlobalVariable.free_spin_left
+	
+	def balance = GlobalVariable.balance
     if (features == null) {
         spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/Take turn_Base_spin', [('url') : 'nurgs.star9ad.com'
                     , ('player_id') : GlobalVariable.player_id, ('partner_code') : GlobalVariable.partner_code, ('game_code') : GlobalVariable.game_code
@@ -61,12 +66,13 @@ for (int i = 1; i <= 3; i++) {
                 spin_result = WS.sendRequestAndVerify(findTestObject('Object Repository/NuRGS/Take turn_free_spin_left'))
             }
         }
-    } else if (((features != null) && 'FREE_SPIN'.equals(features_type)) && (free_spin_complete != true)) {
+    } else if ((features != null) && ('FREE_SPIN'.equals(features_type)) && (free_spin_complete != true)) {
         spin_result = WS.sendRequestAndVerify(findTestObject('Object Repository/NuRGS/Take turn_free_spin_left'))
-    } else {
-        ((features != null) && 'FREE_SPIN'.equals(features_type)) && (free_spin_complete == true).call({ 
+    } else ((features != null) && ('FREE_SPIN'.equals(features_type)) && (free_spin_complete == true)){ 
                 spin_result = WS.sendRequestAndVerify(findTestObject('Object Repository/NuRGS/Take turn_Base_spin'))
-            })
-    }
-}
+            }
+	
+	log.logInfo(balance.toPlainString())
+	
+	}
 

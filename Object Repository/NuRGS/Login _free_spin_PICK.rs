@@ -124,7 +124,7 @@ if (features != null){   //有無 trigger feature
 			GlobalVariable.free_spin_complete = free_spin_complete
 			println(&quot;free spin complete is; &quot;+GlobalVariable.free_spin_complete)
 		  
-			def free_spin_left = result_login.state.features[1].feature_state.free_spin_left
+			def free_spin_left = result_login.state.features[1].feature_state.free_spins_left
 			GlobalVariable.free_spin_left = free_spin_left
 			println (&quot;free_spin_left is: &quot;+free_spin_left)
 		}

@@ -33,14 +33,14 @@
       <name>url</name>
    </variables>
    <variables>
-      <defaultValue>'2019-07-02T00:00:00.000Z'</defaultValue>
+      <defaultValue>'2019-07-03T00:00:00.000Z'</defaultValue>
       <description></description>
       <id>95a8779c-b859-4e6d-aa64-ecad58ea23ee</id>
       <masked>false</masked>
       <name>start_date</name>
    </variables>
    <variables>
-      <defaultValue>'2019-07-02T23:59:00.000Z'</defaultValue>
+      <defaultValue>'2019-07-03T23:59:00.000Z'</defaultValue>
       <description></description>
       <id>95c5dcdb-503a-413c-b05a-f03c9e35d102</id>
       <masked>false</masked>

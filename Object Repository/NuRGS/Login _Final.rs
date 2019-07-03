@@ -51,7 +51,7 @@
       <name>session_token</name>
    </variables>
    <variables>
-      <defaultValue>'NG-1012'</defaultValue>
+      <defaultValue>'NG-0063'</defaultValue>
       <description></description>
       <id>c24c9290-273a-447c-a42d-68ed8e13a9c1</id>
       <masked>false</masked>
@@ -108,6 +108,10 @@ def features = result_login.state.features
 println(&quot;feature is: &quot;+features)
 GlobalVariable.features = features
 
+def balance = result_login.state.balance
+println(&quot;balance is: &quot;+balance)
+GlobalVariable.balance = balance
+
 
 if (features != null){   //有無 trigger feature
 	def features_type = result_login.state.features[0].type
@@ -124,13 +128,13 @@ if (features != null){   //有無 trigger feature
 			GlobalVariable.free_spin_complete = free_spin_complete
 			println(&quot;free spin complete is; &quot;+GlobalVariable.free_spin_complete)
 
-			def free_spin_left = result_login.state.features[1].feature_state.free_spin_left
+			def free_spin_left = result_login.state.features[1].feature_state.free_spins_left
 			GlobalVariable.free_spin_left = free_spin_left
 			println (&quot;free_spin_left is: &quot;+free_spin_left)
 		}
 	
 	else if (features_type == 'FREE_SPIN'){
-		def free_spin_left = result_login.state.features[0].feature_state.free_spin_left
+		def free_spin_left = result_login.state.features[0].feature_state.free_spins_left
 		GlobalVariable.free_spin_left = free_spin_left
 		println(&quot;free_spin_left is: &quot;+ free_spin_left)
 

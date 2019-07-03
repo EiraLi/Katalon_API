@@ -26,6 +26,8 @@ import com.kms.katalon.keyword.excel.ExcelKeywords as ExcelKeywords
  */
 
 //檔案路徑
+
+
 String excelTestFile01 = '/Users/eiralee/EiraLi-Katalon_API/Reports/TestFile01.xls'
 
 //建立 excel 檔
