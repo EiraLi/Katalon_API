@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Login_and_Spin - Copy</name>
+   <name>Login_and_Spin _setValueToExcel</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>ac125472-ccfa-4f6d-9292-80450d1a8ffb</testCaseGuid>

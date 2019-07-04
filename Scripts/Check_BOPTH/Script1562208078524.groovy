@@ -14,6 +14,17 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import net.bytebuddy.implementation.bytecode.constant.NullConstant as NullConstant
 import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger
+import groovy.json.JsonSlurper as JsonSlurper
+//below for exporting to excel
+import java.io.FileInputStream as FileInputStream
+import java.io.FileNotFoundException as FileNotFoundException
+import java.io.IOException as IOException
+import java.util.Date as Date
+import org.apache.poi.xssf.usermodel.XSSFCell as XSSFCell
+import org.apache.poi.xssf.usermodel.XSSFRow as XSSFRow
+import org.apache.poi.xssf.usermodel.XSSFSheet as XSSFSheet
+import org.apache.poi.xssf.usermodel.XSSFWorkbook as XSSFWorkbook
+import java.lang.String as String
 
 KeywordLogger log = new KeywordLogger()
 
@@ -21,97 +32,67 @@ WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('url') : 'k
             , ('secretkey') : '418184e911563cd861e90db6233d7d6c', ('userid1') : 'eira_bbin_0001', ('session_token') : GlobalVariable.session_token]))
 
 WS.sendRequestAndVerify(findTestObject('NuRGS/Login _Final', [('url') : 'nurgs.star9ad.com', ('partner') : 'c304afdf-2f61-6369-c088-924f99e1be1a'
-            , ('session_token') : GlobalVariable.session_token, ('game_code') : 'NG-1012']))
+            , ('session_token') : GlobalVariable.session_token, ('game_code') : 'NG-0063']))
 
-def features = GlobalVariable.features
 
-def features_type = GlobalVariable.features_type
 
-def free_spin_pick = GlobalVariable.free_spin_pick
+def spin_balance_result = ''
 
-def free_spin_complete = GlobalVariable.free_spin_complete
-
-def free_spin_left = GlobalVariable.free_spin_left
-
-def balance = GlobalVariable.balance
-
-def player_id = GlobalVariable.player_id
-
-def game_code = GlobalVariable.game_code
 
 for (int i = 1; i <= 3; i++) {
+	def features = GlobalVariable.features
+	
+	def features_type = GlobalVariable.features_type
+	
+	def free_spin_pick = GlobalVariable.free_spin_pick
+	
+	def free_spin_complete = GlobalVariable.free_spin_complete
+	
+	def free_spin_left = GlobalVariable.free_spin_left
+	
+	def balance = GlobalVariable.balance
+	
     if (features == null) {
         spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/Take turn_Base_spin', [('url') : 'nurgs.star9ad.com'
                     , ('player_id') : GlobalVariable.player_id, ('partner_code') : GlobalVariable.partner_code, ('game_code') : GlobalVariable.game_code
                     , ('rgs_session_token') : GlobalVariable.rgs_session_token, ('state_tag') : GlobalVariable.state_tag]))
     } else if ((features != null) && 'PICK'.equals(features_type)) {
         if (free_spin_pick != true) {
-            spin_result = WS.sendRequestAndVerify(findTestObject('Object Repository/NuRGS/Take turn_pick'))
+            spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/Take turn_pick', [('url') : 'nurgs.star9ad.com', ('player_id') : GlobalVariable.player_id
+                        , ('partner_code') : GlobalVariable.partner_code, ('game_code') : GlobalVariable.game_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
+                        , ('state_tag') : GlobalVariable.state_tag, ('choice') : 'FS_20']))
         } else if (free_spin_pick == true) {
             if (free_spin_complete == true) {
                 spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/Take turn_Base_spin', [('url') : 'nurgs.star9ad.com'
                             , ('player_id') : GlobalVariable.player_id, ('partner_code') : GlobalVariable.partner_code, ('game_code') : GlobalVariable.game_code
                             , ('rgs_session_token') : GlobalVariable.rgs_session_token, ('state_tag') : GlobalVariable.state_tag]))
             } else if (free_spin_complete != true) {
-                spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/Take turn_free_spin_left', [('url') : 'nurgs.star9ad.com'
-                            , ('player_id') : GlobalVariable.player_id, ('partner_code') : GlobalVariable.partner_code, ('game_code') : GlobalVariable.game_code
-                            , ('rgs_session_token') : GlobalVariable.rgs_session_token, ('state_tag') : GlobalVariable.state_tag]))
+                spin_result = WS.sendRequestAndVerify(findTestObject('Object Repository/NuRGS/Take turn_free_spin_left'))
             }
         }
     } else if ((features != null) && ('FREE_SPIN'.equals(features_type)) && (free_spin_complete != true)) {
-    } else {
-        ((features != null) && ('FREE_SPIN'.equals(features_type)) && (free_spin_complete == true)){ 
-                spin_result = WS.sendRequestAndVerify(findTestObject('Object Repository/NuRGS/Take turn_Base_spin'))
-            }
+        spin_result = WS.sendRequestAndVerify(findTestObject('Object Repository/NuRGS/Take turn_free_spin_left'))
+    } else if ((features != null) && ('FREE_SPIN'.equals(features_type)) && (free_spin_complete == true)) {
+        spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/Take turn_Base_spin', [('url') : 'nurgs.star9ad.com'
+                    , ('player_id') : GlobalVariable.player_id, ('partner_code') : GlobalVariable.partner_code, ('game_code') : GlobalVariable.game_code
+                    , ('rgs_session_token') : GlobalVariable.rgs_session_token, ('state_tag') : GlobalVariable.state_tag]))
     }
-}
-
-partner_query_history = WS.sendRequestAndVerify(findTestObject('Partner_query_history - Copy', [('url') : 'rp-gt.star9ad.com'
-            , ('start_date') : '2019-07-03T00:00:00.000Z', ('end_date') : '2019-07-04T23:59:00.000Z', ('partner') : 'c304afdf-2f61-6369-c088-924f99e1be1a']))
-
-def aaa = new groovy.json.JsonSlurper()
-
-def result_partner_query_history = aaa.parseText(partner_query_history.getResponseText())
-
-def partner_query_user_id = GlobalVariable.partner_query_user_id
-
-def partner_query_game_id = GlobalVariable.partner_query_game_id
-
-def partner_query_balance = GlobalVariable.partner_query_balance
-
-def partner_query_round_id = GlobalVariable.partner_query_round_id
-
-log.logInfo(result_partner_query_history.toString())
-
-log.logInfo(result_partner_query_history.data.toString())
-
-def data = result_partner_query_history.data
-
-log.logInfo(player_id.toString())
-
-log.logInfo(game_code.toString())
-
-log.logInfo(data.size().toString())
-
-for (int i = 0; i < data.size(); i++) {
-    def userId = data[i].user_id
-
-    def gameId = data[i].game_id
+    
 	
-	def roundId = data[i].roundid
-
-    log.logInfo(userId)
-
-    log.logInfo(gameId)
-
-    if ((userId.equals(player_id)) && (gameId.equals(game_code)) && (roundId.equals(partner_query_round_id))) {
-        def bal = data[i].balance
-
-        balance_result = balance.toPlainString()
-
-        assert balance_result == bal
-
-        log.logInfo(data[i].toString())
-    }
+    spin_balance_result = balance.toPlainString()
+	log.logInfo(spin_balance_result.toPlainString())
+	
 }
+println("spin_balance_result is: "+ spin_balance_result)
+
+
+WS.sendRequestAndVerify(findTestObject('Object Repository/Wallet/Get_Session_Token'))
+WS.sendRequestAndVerify(findTestObject('NuRGS/Login _Final', [('url') : 'nurgs.star9ad.com', ('partner') : 'c304afdf-2f61-6369-c088-924f99e1be1a'
+            , ('session_token') : GlobalVariable.session_token, ('game_code') : 'NG-0063']))
+
+def balance = GlobalVariable.balance
+log.logInfo(balance.toPlainString())
+//login_balance = balance.toPlainString()
+//log.logInfo(login_balance.toPlainString())
+
 

@@ -99,4 +99,9 @@
       <initValue>''</initValue>
       <name>partner_query_round_id</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>transaction_id</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -1,55 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>Partner_query_history - Copy</name>
+   <name>BOPTH</name>
    <tag></tag>
-   <elementGuidId>0c0d617e-c413-46e7-bee0-5865406a1fe4</elementGuidId>
+   <elementGuidId>81ca01ea-d035-4b0a-845d-f02efc857a50</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent></httpBodyContent>
    <httpBodyType></httpBodyType>
-   <httpHeaderProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>X-Genesis-PartnerToken</name>
-      <type>Main</type>
-      <value>${partner}</value>
-   </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://${url}/api/v3/m4/spindata/query/partner?startDate=${start_date}&amp;endDate=${end_date}</restUrl>
+   <restUrl>https://${url}/history/transactions/all/players/${userid1}?startDate=2019-07-03T00:00:00Z&amp;endDate=2019-07-04T23:59:00Z&amp;partnerToken={{partner}}&amp;timeZoneId=GMT%2B8&amp;pageNumber=1&amp;pageSize=50</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
    <variables>
-      <defaultValue>'rp-gt.star9ad.com'</defaultValue>
+      <defaultValue>'krug.star9ad.com'</defaultValue>
       <description></description>
-      <id>844d0631-cfa7-4884-a319-df13344a54f6</id>
+      <id>a6f36fbc-af2f-4a6a-a1fd-c8e188a7c10f</id>
       <masked>false</masked>
       <name>url</name>
    </variables>
    <variables>
-      <defaultValue>'2019-07-03T00:00:00.000Z'</defaultValue>
+      <defaultValue>'eira_bbin_0001'</defaultValue>
       <description></description>
-      <id>95a8779c-b859-4e6d-aa64-ecad58ea23ee</id>
+      <id>dfb11d3f-efda-4842-9a62-2e346eab072e</id>
       <masked>false</masked>
-      <name>start_date</name>
-   </variables>
-   <variables>
-      <defaultValue>'2019-07-04T23:59:00.000Z'</defaultValue>
-      <description></description>
-      <id>95c5dcdb-503a-413c-b05a-f03c9e35d102</id>
-      <masked>false</masked>
-      <name>end_date</name>
+      <name>userid1</name>
    </variables>
    <variables>
       <defaultValue>'c304afdf-2f61-6369-c088-924f99e1be1a'</defaultValue>
       <description></description>
-      <id>c191d7fb-af68-41f3-b467-2d0a547476f9</id>
+      <id>fb86805d-c50b-4913-84c9-8f9f41024e04</id>
       <masked>false</masked>
       <name>partner</name>
    </variables>
@@ -62,32 +48,35 @@ import com.kms.katalon.core.webservice.verification.WSResponseManager
 
 import groovy.json.JsonSlurper
 import internal.GlobalVariable as GlobalVariable
-import com.kms.katalon.core.logging.KeywordLogger
-
 
 RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
 WS.verifyResponseStatusCode(response, 200)
-
 assertThat(response.getStatusCode()).isEqualTo(200)
 
+def boquery = new groovy.json.JsonSlurper()
+def result_boquery = boquery.parseText(response.getResponseBodyContent())
 
-def aaa = new groovy.json.JsonSlurper()
-def result_partner_query_history = aaa.parseText(response.getResponseBodyContent())
+def balance = result_boquery.documents.payload[0].balance
+println(&quot;latest balance is: &quot; +balance)
+GlobalVariable.balance = balance
 
-def partner_query_user_id = result_partner_query_history.data[0].user_id
-GlobalVariable.partner_query_user_id = partner_query_user_id
+def round_id = result_boquery.documents.payload[0].roundId
+println(&quot;latest roundId is: &quot; +round_id)
+GlobalVariable.round_id = round_id
 
-def partner_query_game_id = result_partner_query_history.data[0].game_id
-GlobalVariable.partner_query_game_id = partner_query_game_id
+def game_code = result_boquery.documents.payload[0].gameId
+println(&quot;game code is: &quot; +game_code)
+GlobalVariable.game_code = game_code
 
-def partner_query_balance = result_partner_query_history.data[0].balance
-GlobalVariable.partner_query_balance = partner_query_balance
+def transaction_id = result_boquery.documents.payload[0].txId
+println(&quot;transaction id is: &quot; +transaction_id)
+GlobalVariable.transaction_id = transaction_id
 
-def partner_query_round_id = result_partner_query_history.data[0].round_id
-GlobalVariable.partner_query_round_id = partner_query_round_id
+
+
 
 </verificationScript>
    <wsdlAddress></wsdlAddress>

@@ -150,11 +150,11 @@ if (features != null) {		// Free Spin Triggered
 
 else if (features != null){
 	if (features_type == 'FREE_SPIN'){
-		def free_spin_left = result_login.state.features[0].feature_state.free_spin_left
+		def free_spin_left = result_spin.features[0].feature_state.free_spin_left
 		GlobalVariable.free_spin_left = free_spin_left
 		println(&quot;free_spin_left is: &quot;+ free_spin_left)
 
-		def free_spin_complete = result_login.state.features[0].complete
+		def free_spin_complete = result_spin.features[0].complete
 	}
 }</verificationScript>
    <wsdlAddress></wsdlAddress>
