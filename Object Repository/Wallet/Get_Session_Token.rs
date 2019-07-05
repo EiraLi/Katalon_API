@@ -29,50 +29,43 @@
       <matchCondition>equals</matchCondition>
       <name>X-Genesis-Secret</name>
       <type>Main</type>
-      <value>${secretkey}</value>
+      <value>${secret_key}</value>
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://${url}/m4/wallet/balance/${userid1}</restUrl>
+   <restUrl>https://${url_krug_gw}/m4/wallet/balance/${userid}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
    <variables>
-      <defaultValue>'krug-gw-colo.star9ad.com'</defaultValue>
+      <defaultValue>findTestData('STG_data').getValue(10, 1)</defaultValue>
       <description></description>
       <id>554f690c-0692-4fbb-b227-1308f2704a34</id>
       <masked>false</masked>
-      <name>url</name>
+      <name>url_krug_gw</name>
    </variables>
    <variables>
-      <defaultValue>'c304afdf-2f61-6369-c088-924f99e1be1a'</defaultValue>
+      <defaultValue>findTestData('STG_data').getValue(2, 1)</defaultValue>
       <description></description>
       <id>a27a4b76-8f6d-499b-99bb-2225e73648ef</id>
       <masked>false</masked>
       <name>partner</name>
    </variables>
    <variables>
-      <defaultValue>'418184e911563cd861e90db6233d7d6c'</defaultValue>
+      <defaultValue>findTestData('STG_data').getValue(3, 1)</defaultValue>
       <description></description>
       <id>bc1aa9f1-3227-4e06-8086-ddc3ac08076b</id>
       <masked>false</masked>
-      <name>secretkey</name>
+      <name>secret_key</name>
    </variables>
    <variables>
-      <defaultValue>'eira_bbin_0001'</defaultValue>
+      <defaultValue>findTestData('STG_data').getValue(4, 1)</defaultValue>
       <description></description>
       <id>109b3b45-4200-4d2e-8f75-13d024bc39e1</id>
       <masked>false</masked>
-      <name>userid1</name>
-   </variables>
-   <variables>
-      <defaultValue>GlobalVariable.session_token</defaultValue>
-      <description></description>
-      <id>fdb33f66-d8b4-4276-b45d-f6a4c958bc45</id>
-      <masked>false</masked>
-      <name>session_token</name>
+      <name>userid</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 

@@ -9,29 +9,62 @@
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
-   <testSuiteGuid>63008b4a-cd29-418a-8911-147966991802</testSuiteGuid>
+   <testSuiteGuid>8a63b399-1513-4820-8d1e-a0bcd2cd3240</testSuiteGuid>
    <testCaseLink>
-      <guid>56bf2adf-813c-494a-bfc7-6cb7af61ba71</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Login</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>71d6c8de-43fa-4114-934f-5ad1755f51f9</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Spin</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>27fa7d21-572f-4aea-adfe-9707a581cbcb</guid>
+      <guid>a5e7b788-6618-4c54-a3aa-cb77807e35cc</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Create_Excel_File</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>0ab496f8-fa6f-489c-98e3-a1b946157f3a</guid>
+      <guid>2b316fbf-f8eb-4655-9e25-a7fba75d4d4a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/compare_balance</testCaseId>
+      <testCaseId>Test Cases/Login</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>370a2f99-e124-4079-80b6-f9162b6bd13c</id>
+         <iterationEntity>
+            <iterationType>SPECIFIC</iterationType>
+            <value>1,3</value>
+         </iterationEntity>
+         <testDataId>Data Files/STG_data</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>f77b8a4a-f8a9-467b-98b1-6d99cfc3449a</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>7195aa57-3a15-48ec-8613-d04a805f8e7d</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>e22b8aa1-c5d6-4b3b-ac4c-da2c7a72e1a3</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>24d65cbb-4d3d-40b6-a1a1-a6e95283f0bf</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>1d12dd1e-f8a6-4b30-9152-345307cac30c</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>d2db140a-d8b9-451e-af80-44ae716f146a</variableId>
+      </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

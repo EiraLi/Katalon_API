@@ -19,35 +19,35 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://${url}/api/v3/m4/spindata/query/partner?startDate=${start_date}&amp;endDate=${end_date}</restUrl>
+   <restUrl>https://${url_history}/api/v3/m4/spindata/query/partner?startDate=${start_date}&amp;endDate=${end_date}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
    <variables>
-      <defaultValue>'rp-gt.star9ad.com'</defaultValue>
+      <defaultValue>findTestData(null).getValue(1, 1)</defaultValue>
       <description></description>
       <id>844d0631-cfa7-4884-a319-df13344a54f6</id>
       <masked>false</masked>
-      <name>url</name>
+      <name>url_history</name>
    </variables>
    <variables>
-      <defaultValue>'2019-07-03T00:00:00.000Z'</defaultValue>
+      <defaultValue>findTestData(null).getValue(1, 1)</defaultValue>
       <description></description>
       <id>95a8779c-b859-4e6d-aa64-ecad58ea23ee</id>
       <masked>false</masked>
       <name>start_date</name>
    </variables>
    <variables>
-      <defaultValue>'2019-07-04T23:59:00.000Z'</defaultValue>
+      <defaultValue>findTestData(null).getValue(1, 1)</defaultValue>
       <description></description>
       <id>95c5dcdb-503a-413c-b05a-f03c9e35d102</id>
       <masked>false</masked>
       <name>end_date</name>
    </variables>
    <variables>
-      <defaultValue>'c304afdf-2f61-6369-c088-924f99e1be1a'</defaultValue>
+      <defaultValue>findTestData(null).getValue(1, 1)</defaultValue>
       <description></description>
       <id>c191d7fb-af68-41f3-b467-2d0a547476f9</id>
       <masked>false</masked>

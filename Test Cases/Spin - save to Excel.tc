@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Spin - save to Excel</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d5e1ec56-b1c0-4ca5-a2d0-aa203ec64476</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(9, 1)</defaultValue>
+      <description></description>
+      <id>86ce311f-499d-49c7-b847-f334fb8d19ae</id>
+      <masked>false</masked>
+      <name>url_nurgs</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(6, 1)</defaultValue>
+      <description></description>
+      <id>a4e78f50-e0f5-446b-8b4e-1a4dadd7ac63</id>
+      <masked>false</masked>
+      <name>choice</name>
+   </variable>
+</TestCaseEntity>

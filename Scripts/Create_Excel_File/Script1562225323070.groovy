@@ -36,29 +36,37 @@ import com.kms.katalon.keyword.excel.ExcelKeywords as ExcelKeywords
 
 KeywordLogger log = new KeywordLogger()
 
-String excelTestFile02 = '/Users/eiralee/EiraLi-Katalon_API/Reports/TestFile02.xls'
+String excelTestFile01 = '/Users/eiralee/EiraLi-Katalon_API/Reports/TestFile01.xls'
 //建立 excel 檔
-ExcelKeywords.createExcelFile(excelTestFile02)
+ExcelKeywords.createExcelFile(excelTestFile01)
 
 //確認 excel 檔是否有被建立
-File testfile = new File(excelTestFile02)
+File testfile = new File(excelTestFile01)
 assert testfile.exists() == true
 
 //建立 sheet
-workbook01 = ExcelKeywords.getWorkbook(excelTestFile02)
-ExcelKeywords.createExcelSheets(workbook01, ['GongXi', 'Jungle'])
-ExcelKeywords.saveWorkbook(excelTestFile02, workbook01)
+workbook01 = ExcelKeywords.getWorkbook(excelTestFile01)
+ExcelKeywords.createExcelSheets(workbook01, ['Sheet1', 'Sheet2'])
+ExcelKeywords.saveWorkbook(excelTestFile01, workbook01)
 
 //確認 sheet 是否有被建立
-String[] SheetCreated01 = ['Sheet0', 'GongXi', 'Jungle']
-workbook01 = ExcelKeywords.getWorkbook(excelTestFile02)
+String[] SheetCreated01 = ['Sheet0', 'Sheet1', 'Sheet2']
+workbook01 = ExcelKeywords.getWorkbook(excelTestFile01)
 assert SheetCreated01 == ExcelKeywords.getSheetNames(workbook01)
 
-//write some date to sheet
-GongXi = ExcelKeywords.getExcelSheet(workbook01, 'GongXi')
+//write some date to sheet1
+Sheet1 = ExcelKeywords.getExcelSheet(workbook01, 'Sheet1')
 Map content = new HashMap<>()
-content.putAt('A1', 'Name')
-content.putAt('B1', 'Balance')
-ExcelKeywords.setValueToCellByAddresses(GongXi, content)
-ExcelKeywords.saveWorkbook(excelTestFile02, workbook01)
+content.putAt('A1', 'Balance')
+content.putAt('B1', 'transaction_id')
+ExcelKeywords.setValueToCellByAddresses(Sheet1, content)
+ExcelKeywords.saveWorkbook(excelTestFile01, workbook01)
+
+//write some date to sheet2
+Sheet2 = ExcelKeywords.getExcelSheet(workbook01, 'Sheet2')
+Map content1 = new HashMap<>()
+content1.putAt('A1', 'Balance')
+content1.putAt('B1', 'transaction_id')
+ExcelKeywords.setValueToCellByAddresses(Sheet2, content1)
+ExcelKeywords.saveWorkbook(excelTestFile01, workbook01)
 

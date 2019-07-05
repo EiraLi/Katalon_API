@@ -12,28 +12,28 @@
    <httpBodyType></httpBodyType>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://${url}/history/transactions/all/players/${userid1}?startDate=2019-07-03T00:00:00Z&amp;endDate=2019-07-04T23:59:00Z&amp;partnerToken={{partner}}&amp;timeZoneId=GMT%2B8&amp;pageNumber=1&amp;pageSize=50</restUrl>
+   <restUrl>https://${url_krug}/history/transactions/all/players/${userid}?startDate=2019-07-03T00:00:00Z&amp;endDate=2019-07-04T23:59:00Z&amp;partnerToken={{partner}}&amp;timeZoneId=GMT%2B8&amp;pageNumber=1&amp;pageSize=50</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
    <variables>
-      <defaultValue>'krug.star9ad.com'</defaultValue>
+      <defaultValue>findTestData(null).getValue(1, 1)</defaultValue>
       <description></description>
       <id>a6f36fbc-af2f-4a6a-a1fd-c8e188a7c10f</id>
       <masked>false</masked>
-      <name>url</name>
+      <name>url_krug</name>
    </variables>
    <variables>
-      <defaultValue>'eira_bbin_0001'</defaultValue>
+      <defaultValue>findTestData(null).getValue(1, 1)</defaultValue>
       <description></description>
       <id>dfb11d3f-efda-4842-9a62-2e346eab072e</id>
       <masked>false</masked>
-      <name>userid1</name>
+      <name>userid</name>
    </variables>
    <variables>
-      <defaultValue>'c304afdf-2f61-6369-c088-924f99e1be1a'</defaultValue>
+      <defaultValue>findTestData(null).getValue(1, 1)</defaultValue>
       <description></description>
       <id>fb86805d-c50b-4913-84c9-8f9f41024e04</id>
       <masked>false</masked>

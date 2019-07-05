@@ -119,7 +119,9 @@ println(&quot;player id is: &quot;+game_code)
 GlobalVariable.player_id = game_code
 
 
-
+def round_id = result_spin.round_id
+println(&quot;round id is: &quot;+round_id)
+GlobalVariable.round_id = round_id
 
 
 

@@ -16,7 +16,7 @@ import internal.GlobalVariable as GlobalVariable
 
 WS.sendRequestAndVerify(findTestObject('NuRGS/No_feature/Get_session_token', [('url') : 'krug-gw-colo.star9ad.com', ('userid1') : 'eira_bbin_0001', ('partner') : 'c304afdf-2f61-6369-c088-924f99e1be1a', ('secretkey') : '418184e911563cd861e90db6233d7d6c']))
 
-WS.sendRequestAndVerify(findTestObject('NuRGS/Login _no_feature', [('url') : 'nurgs.star9ad.com', ('partner') : 'c304afdf-2f61-6369-c088-924f99e1be1a', ('session_token') : GlobalVariable.session_token, ('game_code') : 'M4-0086']))
+WS.sendRequestAndVerify(findTestObject('null', [('url') : 'nurgs.star9ad.com', ('partner') : 'c304afdf-2f61-6369-c088-924f99e1be1a', ('session_token') : GlobalVariable.session_token, ('game_code') : 'M4-0086']))
 
 for (int i = 1; i <= 3; i++) {
     def player_id = GlobalVariable.player_id

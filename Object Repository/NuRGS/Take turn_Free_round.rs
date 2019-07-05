@@ -23,18 +23,18 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://${url}/ng/take-turn/</restUrl>
+   <restUrl>https://${url_nurgs}/ng/take-turn/</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
    <variables>
-      <defaultValue>'nurgs.star9ad.com'</defaultValue>
+      <defaultValue>findTestData('STG_data').getValue(9, 1)</defaultValue>
       <description></description>
       <id>a39fbb1c-47b8-4430-9065-bf7403335def</id>
       <masked>false</masked>
-      <name>url</name>
+      <name>url_nurgs</name>
    </variables>
    <variables>
       <defaultValue>GlobalVariable.game_code</defaultValue>
@@ -118,6 +118,13 @@ println(&quot;gamecode is: &quot;+game_code)
 GlobalVariable.game_code = game_code
 println(&quot;GlobalVariable  gamecode is: &quot;+GlobalVariable.game_code)
 
+def round_id = result_spin.round_id
+println(&quot;round id is: &quot;+round_id)
+GlobalVariable.round_id = round_id
+
+def transaction_id = result_spin.spin_result.causality
+println(&quot;transaction id is: &quot;+ transaction_id)
+GlobalVariable.transaction_id = transaction_id
 
 
 if (features != null) {		// Free Spin Triggered

@@ -5,4 +5,18 @@
    <tag></tag>
    <comment></comment>
    <testCaseGuid>a84b939c-54e4-4f98-805f-eca98ee6a5a8</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(9, 1)</defaultValue>
+      <description></description>
+      <id>71779572-8a36-4263-9c89-af62b92d798e</id>
+      <masked>false</masked>
+      <name>url_nurgs</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(6, 1)</defaultValue>
+      <description></description>
+      <id>55f3eace-53ac-4487-8ae5-d88009684bd9</id>
+      <masked>false</masked>
+      <name>choice</name>
+   </variable>
 </TestCaseEntity>

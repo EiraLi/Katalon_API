@@ -31,7 +31,7 @@ KeywordLogger log = new KeywordLogger()
 WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('url') : 'krug-gw-colo.star9ad.com', ('partner') : 'c304afdf-2f61-6369-c088-924f99e1be1a'
             , ('secretkey') : '418184e911563cd861e90db6233d7d6c', ('userid1') : 'eira_bbin_0001', ('session_token') : GlobalVariable.session_token]))
 
-WS.sendRequestAndVerify(findTestObject('NuRGS/Login _Final', [('url') : 'nurgs.star9ad.com', ('partner') : 'c304afdf-2f61-6369-c088-924f99e1be1a'
+WS.sendRequestAndVerify(findTestObject('NuRGS/Login_Final', [('url') : 'nurgs.star9ad.com', ('partner') : 'c304afdf-2f61-6369-c088-924f99e1be1a'
             , ('session_token') : GlobalVariable.session_token, ('game_code') : 'NG-0063']))
 
 
@@ -87,7 +87,7 @@ println("spin_balance_result is: "+ spin_balance_result)
 
 
 WS.sendRequestAndVerify(findTestObject('Object Repository/Wallet/Get_Session_Token'))
-WS.sendRequestAndVerify(findTestObject('NuRGS/Login _Final', [('url') : 'nurgs.star9ad.com', ('partner') : 'c304afdf-2f61-6369-c088-924f99e1be1a'
+WS.sendRequestAndVerify(findTestObject('NuRGS/Login_Final', [('url') : 'nurgs.star9ad.com', ('partner') : 'c304afdf-2f61-6369-c088-924f99e1be1a'
             , ('session_token') : GlobalVariable.session_token, ('game_code') : 'NG-0063']))
 
 def balance = GlobalVariable.balance
