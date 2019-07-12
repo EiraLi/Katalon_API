@@ -14,7 +14,7 @@
       <guid>a3ddc639-f72f-4a33-8c61-ee24cf3e95ae</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Radi8 - sanity/Base_Spin/___BaseSpin_C102925_C102926</testCaseId>
+      <testCaseId>Test Cases/Radi8 - sanity/Base_Spin/___C102925_C102926</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
          <id>1874c488-3306-4db4-962c-fa291a7250f2</id>

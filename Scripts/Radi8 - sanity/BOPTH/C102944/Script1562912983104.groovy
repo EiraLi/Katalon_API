@@ -1,3 +1,7 @@
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -11,48 +15,77 @@ import internal.GlobalVariable as GlobalVariable
 import net.bytebuddy.implementation.bytecode.constant.NullConstant as NullConstant
 import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger
 import groovy.json.JsonSlurper as JsonSlurper
+import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 //below for exporting to excel
-import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
-import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import java.io.File as File
-import com.kms.katalon.keyword.excel.ExcelKeywords as ExcelKeywords
+import java.io.FileInputStream as FileInputStream
+import java.io.FileNotFoundException as FileNotFoundException
+import java.io.IOException as IOException
+import java.util.Date as Date
+import org.apache.poi.xssf.usermodel.XSSFCell as XSSFCell
+import org.apache.poi.xssf.usermodel.XSSFRow as XSSFRow
+import org.apache.poi.xssf.usermodel.XSSFSheet as XSSFSheet
+import org.apache.poi.xssf.usermodel.XSSFWorkbook as XSSFWorkbook
+import java.lang.String as String
+import static groovy.test.GroovyAssert.shouldFail
+import static groovy.test.GroovyAssert.assertNotNull
 
 String newline = System.getProperty('line.separator')
 
-String excelTestFile01 = '/Users/eiralee/EiraLi-Katalon_API/Reports/TestFile01.xls'
+String excelTestFile02 = '/Users/eiralee/EiraLi-Katalon_API/Reports/TestFile02.xls'
 
 //建立 excel 檔
-ExcelKeywords.createExcelFile(excelTestFile01)
+ExcelKeywords.createExcelFile(excelTestFile02)
+
 //確認 excel 檔是否有被建立
-File testfile = new File(excelTestFile01)
+File testfile = new File(excelTestFile02)
+
 assert testfile.exists() == true
+
 //建立 sheet
-workbook01 = ExcelKeywords.getWorkbook(excelTestFile01)
-ExcelKeywords.createExcelSheets(workbook01, ['game_history', 'bopth'])
-ExcelKeywords.saveWorkbook(excelTestFile01, workbook01)
+workbook01 = ExcelKeywords.getWorkbook(excelTestFile02)
+
+ExcelKeywords.createExcelSheets(workbook01, ['game_history', 'bo_transaction_detail'])
+
+ExcelKeywords.saveWorkbook(excelTestFile02, workbook01)
+
 //確認 sheet 是否有被建立
-String[] SheetCreated01 = ['Sheet0', 'game_history', 'bopth']
-workbook01 = ExcelKeywords.getWorkbook(excelTestFile01)
+String[] SheetCreated01 = ['Sheet0', 'game_history', 'bo_transaction_detail']
+
+workbook01 = ExcelKeywords.getWorkbook(excelTestFile02)
+
 assert SheetCreated01 == ExcelKeywords.getSheetNames(workbook01)
+
 //write some date to sheet1
 game_history = ExcelKeywords.getExcelSheet(workbook01, 'game_history')
+
 Map content = new HashMap()
-content.putAt('A1', 'transaction_id')
+
+content.putAt('A1', 'round_id')
+
 content.putAt('B1', 'Balance')
+
+content.putAt('C1', 'Total_win')
+
 ExcelKeywords.setValueToCellByAddresses(game_history, content)
-ExcelKeywords.saveWorkbook(excelTestFile01, workbook01)
+
+ExcelKeywords.saveWorkbook(excelTestFile02, workbook01)
+
 //write some date to sheet2
-bopth = ExcelKeywords.getExcelSheet(workbook01, 'bopth')
+bopth = ExcelKeywords.getExcelSheet(workbook01, 'bo_transaction_detail')
+
 Map content1 = new HashMap()
-content1.putAt('A1', 'transaction_id')
+
+content1.putAt('A1', 'round_id')
+
 content1.putAt('B1', 'Balance')
-ExcelKeywords.setValueToCellByAddresses(bopth, content1)
-ExcelKeywords.saveWorkbook(excelTestFile01, workbook01)
 
-//***Check if BOPTH history is consistent with in-game result  ***
+content1.putAt('C1', 'Total_win')
 
+ExcelKeywords.setValueToCellByAddresses(bo_transaction_detail, content1)
+
+ExcelKeywords.saveWorkbook(excelTestFile02, workbook01)
+
+//***Check if BO transaction detail is consistent with in-game result  ***
 WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('url_krug_gw') : url_krug_gw, ('partner') : partner
             , ('secret_key') : secret_key, ('userid') : userid]))
 
@@ -61,6 +94,8 @@ WS.sendRequestAndVerify(findTestObject('NuRGS/Login_Final', [('url_nurgs') : url
 
 WS.sendRequestAndVerify(findTestObject('GenPlus/Add_GenCoin', [('url_genplus') : url_genplus, ('partner_code') : partner_code
             , ('userid') : userid]))
+
+WS.sendRequestAndVerify(findTestObject('NuRGS/Buy_Booster', [('url_nurgs') : url_nurgs, ('game_code') : game_code, ('partner_code') : partner_code, ('userid') : userid, ('rgs_session_token') : GlobalVariable.rgs_session_token]))
 
 for (int i = 1; i <= 10; i++) {
     def features = GlobalVariable.features
@@ -78,13 +113,13 @@ for (int i = 1; i <= 10; i++) {
     def booster_round_win = GlobalVariable.booster_round_win
 
     def transaction_id = GlobalVariable.transaction_id
+	
+	def round_id = GlobalVariable.round_id
 
     if (features == null) {
         spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/Take turn_Free_round', [('url_nurgs') : url_nurgs, ('game_code') : GlobalVariable.game_code
                     , ('partner_code') : GlobalVariable.partner_code, ('player_id') : GlobalVariable.player_id, ('rgs_session_token') : GlobalVariable.rgs_session_token
-                    , ('state_tag') : GlobalVariable.state_tag]) 
-            ) 
-        
+                    , ('state_tag') : GlobalVariable.state_tag]))
     } else if ((features != null) && 'PICK'.equals(features_type)) {
         if (free_spin_pick != true) {
             spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/Take turn_pick', [('url_nurgs') : url_nurgs, ('player_id') : GlobalVariable.player_id
@@ -110,36 +145,22 @@ for (int i = 1; i <= 10; i++) {
 WS.sendRequestAndVerify(findTestObject('NuRGS/RoundId_detail api', [('partner') : partner, ('round_id') : GlobalVariable.round_id
             , ('game_code') : game_code, ('partner_code') : partner_code]))
 
-def round_detail_transaction_id = GlobalVariable.round_detail_transaction_id
-def round_detail_balance = GlobalVariable.round_detail_balance
-def latest_round_detail_balance = Long.toString(round_detail_balance)
-ExcelKeywords.setValueToCellByIndex(game_history, 1, 1, latest_round_detail_balance)
-ExcelKeywords.setValueToCellByIndex(game_history, 1, 0, GlobalVariable.round_detail_transaction_id)
+
+ExcelKeywords.setValueToCellByIndex(game_history, 1, 1, GlobalVariable.round_id)
+ExcelKeywords.setValueToCellByIndex(game_history, 1, 0, GlobalVariable.round_detail_balance)
+ExcelKeywords.setValueToCellByIndex(game_history, 1, 1, GlobalVariable.round_total_win)
 ExcelKeywords.setValueToCellByAddresses(game_history, content)
 ExcelKeywords.saveWorkbook(excelTestFile01, workbook01)
 
-//check BOPTH
-WS.sendRequestAndVerify(findTestObject('BOPTH', [('url_krug') : url_krug, ('userid') : userid, ('partner') : partner, ('start_date') : start_date, ('end_date') : end_date]))
+//check BO_transaction api
+WS.sendRequestAndVerify(findTestObject('BOPTH', [('url_krug') : url_krug, ('userid') : userid, ('partner') : partner, ('start_date') : start_date
+            , ('end_date') : end_date]))
 
-//def bo_balance = GlobalVariable.latest_bo_balance[0]
-//println('bo_balance is:' + bo_balance)
-//def bo_transaction_id = GlobalVariable.bo_transaction_id[0]
-//
-//println('bo_transaction_id is:' + bo_transaction_id)
-//double latest_bo_balance = double.parseDouble(GlobalVariable.latest_bo_balance[0])
-
-ExcelKeywords.setValueToCellByIndex(bopth, 1, 1, GlobalVariable.latest_bo_balance)
-
-ExcelKeywords.setValueToCellByIndex(bopth, 1, 0, GlobalVariable.bo_transaction_id)
+ExcelKeywords.setValueToCellByIndex(bopth, 1, 1, GlobalVariable.BO_txd_round_id)
+ExcelKeywords.setValueToCellByIndex(bopth, 1, 0, GlobalVariable.BO_txd_balance)
+ExcelKeywords.setValueToCellByIndex(bopth, 1, 0, GlobalVariable.round_total_win)
 
 ExcelKeywords.setValueToCellByAddresses(bopth, content1)
 
 ExcelKeywords.saveWorkbook(excelTestFile01, workbook01)
 
-// Compare sheets
-//CompareSheet = ExcelKeywords.compareTwoSheets(game_history, bopth)
-//
-//println('Result of compare sheet01 and sheet02 is: ' + CompareSheet)
-
-
-//再跑一次看看 round_detail 改了 json path

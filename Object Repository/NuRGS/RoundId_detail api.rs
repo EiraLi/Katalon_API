@@ -86,12 +86,18 @@ def round_detail_transaction_id = result_roundid_detail.spin_results[0].transact
 println(&quot;transaction id is:&quot; +round_detail_transaction_id)
 GlobalVariable.round_detail_transaction_id = round_detail_transaction_id
 
-def round_detail_balance = result_roundid_detail.spin_results[0].balance
-println(&quot;balance is:&quot; +round_detail_balance)
+def round_balance = result_roundid_detail.spin_results[0].balance
+println(&quot;balance is:&quot; +round_balance)
+def round_detail_balance = Long.toString(round_balance)
 GlobalVariable.round_detail_balance = round_detail_balance
+
 
 def player_id = result_roundid_detail.player_id
 println(&quot;player id is:&quot; +player_id)
-GlobalVariable.player_id = player_id</verificationScript>
+GlobalVariable.player_id = player_id
+
+def round_total_win = result_roundid_detail.spin_results[0].total_win
+println(&quot;round_total_win is:&quot; +round_total_win)
+GlobalVariable.round_total_win = round_total_win</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

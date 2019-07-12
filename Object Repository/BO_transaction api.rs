@@ -59,6 +59,28 @@ import internal.GlobalVariable as GlobalVariable
 RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
+
+
+
+WS.verifyResponseStatusCode(response, 200)
+
+assertThat(response.getStatusCode()).isEqualTo(200)
+
+String newline = System.getProperty(&quot;line.separator&quot;)
+def BO_transaction = new groovy.json.JsonSlurper()
+def result_BO_transaction = BO_transaction.parseText(response.getResponseBodyContent())
+
+
+def BO_txd_balance = result_BO_transaction.balance
+println(&quot;result_BO_transaction balance is: &quot; +BO_txd_balance)
+GlobalVariable.BO_txd_balance = BO_txd_balance
+
+def BO_txd_round_id = result_BO_transaction.roundid
+println(&quot;BO_transaction_round_id is: &quot; +BO_txd_round_id)
+GlobalVariable.BO_txd_round_id = BO_txd_round_id
+
+def BO_txd_
+
 </verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

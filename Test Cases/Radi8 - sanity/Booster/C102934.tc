@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>C102934</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>82a0a5e0-4e2d-4b1e-9c31-2b07ebd4a662</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(10, 1)</defaultValue>
+      <description></description>
+      <id>bc7f65d7-4f75-4250-9239-492004632ae8</id>
+      <masked>false</masked>
+      <name>url_krug_gw</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>b9604f9b-e110-4de7-82e8-091b2436e5a2</id>
+      <masked>false</masked>
+      <name>partner</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(3, 1)</defaultValue>
+      <description></description>
+      <id>9cd9f0e7-8416-45ef-8f04-f899ab13e023</id>
+      <masked>false</masked>
+      <name>secret_key</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(4, 1)</defaultValue>
+      <description></description>
+      <id>ecee8a01-8418-4051-b105-195343849889</id>
+      <masked>false</masked>
+      <name>userid</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(9, 1)</defaultValue>
+      <description></description>
+      <id>996a5a56-d6da-45e9-9b34-9ed50d239197</id>
+      <masked>false</masked>
+      <name>url_nurgs</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(5, 1)</defaultValue>
+      <description></description>
+      <id>9476018e-b1df-4906-96b5-4b2d0a513604</id>
+      <masked>false</masked>
+      <name>game_code</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(13, 1)</defaultValue>
+      <description></description>
+      <id>9446295f-38f1-4722-b88f-8235342d68aa</id>
+      <masked>false</masked>
+      <name>url_genplus</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(1, 1)</defaultValue>
+      <description></description>
+      <id>c72fe02e-0b05-42f5-b347-183de0376bd9</id>
+      <masked>false</masked>
+      <name>partner_code</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(6, 1)</defaultValue>
+      <description></description>
+      <id>a47d7769-2bdb-4a73-a41c-193cf290f306</id>
+      <masked>false</masked>
+      <name>choice</name>
+   </variable>
+</TestCaseEntity>

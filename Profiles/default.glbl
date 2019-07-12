@@ -189,4 +189,19 @@
       <initValue>''</initValue>
       <name>booster_win_amount</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>BO_txd_balance</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>round_total_win</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>BO_txd_round_id</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
