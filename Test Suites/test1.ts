@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSuiteEntity>
+   <description></description>
+   <name>test1</name>
+   <tag></tag>
+   <isRerun>false</isRerun>
+   <mailRecipient></mailRecipient>
+   <numberOfRerun>0</numberOfRerun>
+   <pageLoadTimeout>30</pageLoadTimeout>
+   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <testSuiteGuid>1483adf7-90f2-465f-a8d7-5a253f5c5558</testSuiteGuid>
+   <testCaseLink>
+      <guid>50c26e5d-6497-498a-b519-e39d30e322a2</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Login</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>7c3efd75-5d5e-44ae-825e-ce650ec2dca3</id>
+         <iterationEntity>
+            <iterationType>RANGE</iterationType>
+            <value>1-3</value>
+         </iterationEntity>
+         <testDataId>Data Files/STG_data</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>7c3efd75-5d5e-44ae-825e-ce650ec2dca3</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>url_krug_gw</value>
+         <variableId>f77b8a4a-f8a9-467b-98b1-6d99cfc3449a</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>7c3efd75-5d5e-44ae-825e-ce650ec2dca3</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>url_nurgs</value>
+         <variableId>7195aa57-3a15-48ec-8613-d04a805f8e7d</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>7c3efd75-5d5e-44ae-825e-ce650ec2dca3</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>game_code</value>
+         <variableId>e22b8aa1-c5d6-4b3b-ac4c-da2c7a72e1a3</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>7c3efd75-5d5e-44ae-825e-ce650ec2dca3</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>partner</value>
+         <variableId>24d65cbb-4d3d-40b6-a1a1-a6e95283f0bf</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>7c3efd75-5d5e-44ae-825e-ce650ec2dca3</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>secret_key</value>
+         <variableId>1d12dd1e-f8a6-4b30-9152-345307cac30c</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>7c3efd75-5d5e-44ae-825e-ce650ec2dca3</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>player_id</value>
+         <variableId>d2db140a-d8b9-451e-af80-44ae716f146a</variableId>
+      </variableLink>
+   </testCaseLink>
+</TestSuiteEntity>

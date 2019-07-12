@@ -122,9 +122,30 @@ def round_id = result_spin.round_id
 println(&quot;round id is: &quot;+round_id)
 GlobalVariable.round_id = round_id
 
+def booster_round_win = result_spin.round_win
+println(&quot;round win is:&quot;+booster_round_win)
+GlobalVariable.booster_round_win = booster_round_win
+
 def transaction_id = result_spin.spin_result.causality
 println(&quot;transaction id is: &quot;+ transaction_id)
 GlobalVariable.transaction_id = transaction_id
+
+def provider_feature_type = result_spin.provider.feature_type
+println(&quot;provider_feature_type is:&quot; +provider_feature_type)
+GlobalVariable.provider_feature_type = provider_feature_type
+
+def provider = result_spin.provider
+println(&quot;provider is:&quot; +provider)
+GlobalVariable.provider = provider
+
+def booster_balance = result_spin.balance
+println(&quot;booster_balance is:&quot; +booster_balance)
+GlobalVariable.booster_balance = booster_balance
+
+def booster_win_amount = result_spin.spin_result.win_amount
+println(&quot;win_amount is: &quot;+ booster_win_amount)
+GlobalVariable.booster_win_amount = booster_win_amount
+
 
 
 if (features != null) {		// Free Spin Triggered

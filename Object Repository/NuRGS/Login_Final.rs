@@ -78,6 +78,7 @@ assertThat(response.getStatusCode()).isEqualTo(200)
 String newline = System.getProperty(&quot;line.separator&quot;)
 def login = new groovy.json.JsonSlurper()
 def result_login = login.parseText(response.getResponseBodyContent())
+println(result_login)
 
 def player_id = result_login.state.player_id
 println(&quot;playerid is: &quot;+player_id)
@@ -108,10 +109,17 @@ def features = result_login.state.features
 println(&quot;feature is: &quot;+features)
 GlobalVariable.features = features
 
-def balance = result_login.state.balance
-println(&quot;balance is: &quot;+balance)
-GlobalVariable.balance = balance
+def login_balance = result_login.state.balance
+println(&quot;balance is: &quot;+login_balance)
+GlobalVariable.login_balance = login_balance
 
+def login_round_id = result_login.state.round_id
+println(&quot;result login round id is: &quot;+login_round_id)
+GlobalVariable.login_round_id = login_round_id
+
+def login_win_amount = result_login.state.spin_result.win_amount
+println(&quot;login_win_amount is: &quot;+login_win_amount)
+GlobalVariable.login_win_amount = login_win_amount
 
 if (features != null){   //有無 trigger feature
 	def features_type = result_login.state.features[0].type

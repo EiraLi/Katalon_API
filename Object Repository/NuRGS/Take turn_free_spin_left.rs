@@ -130,31 +130,47 @@ def transaction_id = result_spin.spin_result.causality
 println(&quot;transaction id is: &quot;+ transaction_id)
 GlobalVariable.transaction_id = transaction_id
 
+def free_spin_round_win = result_spin.round_win
+println(&quot;free_spin_round_win is: &quot;+ free_spin_round_win)
+GlobalVariable.free_spin_round_win = free_spin_round_win
 
-if (features != null) {		// Free Spin Triggered
-	def free_spin_pick = result_spin.features[0].complete
-	GlobalVariable.free_spin_pick = free_spin_pick
-	println (&quot;free spin pick is :&quot;+GlobalVariable.free_spin_pick)
+def booster_win_amount = result_spin.spin_result.win_amount
+println(&quot;win_amount is: &quot;+ booster_win_amount)
+GlobalVariable.booster_win_amount = booster_win_amount
+
+if (features != null) {
+	// Features Triggered
+	def features_type = result_spin.features[0].type
+	GlobalVariable.features_type = features_type
 	
-	if (free_spin_pick == true) {		// Free Spin Picked
-		def free_spin_complete = result_spin.features[1].complete
-		GlobalVariable.free_spin_complete = free_spin_complete
-		println (&quot;free spin complete is :&quot;+GlobalVariable.free_spin_complete)
-		def free_spin_left = result_spin.features[1].feature_state.free_spins_left
-		GlobalVariable.free_spin_left = free_spin_left
-		println (&quot;free spins left is :&quot;+GlobalVariable.free_spin_left)
+
+	if ('PICK'.equals(features_type)) {
+		// Features Is PICK
+		def free_spin_pick = result_spin.features[0].complete
+		GlobalVariable.free_spin_pick = free_spin_pick
+		
+
+		if (free_spin_pick == true) {
+			// Free Spin Picked
+			def free_spin_complete = result_spin.features[1].complete
+			GlobalVariable.free_spin_complete = free_spin_complete
+			
+			def free_spin_left = result_spin.features[1].feature_state.free_spins_left
+			GlobalVariable.free_spin_left = free_spin_left
+			
+		}
 	}
 }
 
-else if (features != null){
-	if (features_type == 'FREE_SPIN'){
+else if ('FREE_SPIN'.equals(features_type)) {
+		// Features Is FREE_SPIN
+		def free_spin_complete = result_spin.features[0].complete
+		GlobalVariable.free_spin_complete = free_spin_complete
+		
 		def free_spin_left = result_spin.features[0].feature_state.free_spins_left
 		GlobalVariable.free_spin_left = free_spin_left
-		println(&quot;free_spin_left is: &quot;+ free_spin_left)
-
-		def free_spin_complete = result_spin.features[0].complete
+		
 	}
-}
 
 
 

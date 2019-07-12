@@ -95,6 +95,9 @@ def session_token = result_getsession.session_token
 println (&quot;...value extracted is :&quot;+session_token)
 
 GlobalVariable.session_token = session_token
-println (&quot;GlobalVariable is :&quot;+GlobalVariable.session_token)</verificationScript>
+println (&quot;GlobalVariable is :&quot;+GlobalVariable.session_token)
+
+def internal_balance = result_getsession.internal_balance
+GlobalVariable.internal_balance = internal_balance</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

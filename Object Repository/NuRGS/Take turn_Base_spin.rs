@@ -121,7 +121,7 @@ println(&quot;GlobalVariable  gamecode is: &quot;+GlobalVariable.game_code)
 def balance = result_spin.balance
 println(&quot;balance is: &quot;+balance)
 GlobalVariable.balance = balance
-
+println('GB Balance is'+GlobalVariable.balance)
 def round_id = result_spin.round_id
 println(&quot;round id is: &quot;+round_id)
 GlobalVariable.round_id = round_id
@@ -129,6 +129,11 @@ GlobalVariable.round_id = round_id
 def transaction_id = result_spin.spin_result.causality
 println(&quot;transaction id is: &quot;+ transaction_id)
 GlobalVariable.transaction_id = transaction_id
+
+def win_amount = result_spin.spin_result.win_amount
+println(&quot;win_amount is: &quot;+ win_amount)
+GlobalVariable.win_amount = win_amount
+
 
 if (features != null) {		// Free Spin Triggered
 	def features_type = result_spin.features[0].type

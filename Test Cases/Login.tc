@@ -45,6 +45,6 @@
       <description></description>
       <id>d2db140a-d8b9-451e-af80-44ae716f146a</id>
       <masked>false</masked>
-      <name>userid</name>
+      <name>player_id</name>
    </variable>
 </TestCaseEntity>

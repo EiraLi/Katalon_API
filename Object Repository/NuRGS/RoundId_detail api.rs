@@ -74,19 +74,23 @@ RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
+WS.verifyResponseStatusCode(response, 200)
+assertThat(response.getStatusCode()).isEqualTo(200)
+
+
 def roundid_detail = new groovy.json.JsonSlurper()
 def result_roundid_detail = roundid_detail.parseText(response.getResponseBodyContent())
 
 
-def transaction_id = result_roundid_detail.spin_results[0].transaction_id
-println(&quot;transaction id is:&quot; +transaction_id)
-GlobalVariable.transaction_id = transaction_id
+def round_detail_transaction_id = result_roundid_detail.spin_results[0].transaction_id
+println(&quot;transaction id is:&quot; +round_detail_transaction_id)
+GlobalVariable.round_detail_transaction_id = round_detail_transaction_id
 
-def balance = result_roundid_detail.spin_results[0].balance
-println(&quot;balance is:&quot; +balance)
-GlobalVariable.balance = balance
+def round_detail_balance = result_roundid_detail.spin_results[0].balance
+println(&quot;balance is:&quot; +round_detail_balance)
+GlobalVariable.round_detail_balance = round_detail_balance
 
-def player_id = result_roundid_detail.spin_results[0].player_id
+def player_id = result_roundid_detail.player_id
 println(&quot;player id is:&quot; +player_id)
 GlobalVariable.player_id = player_id</verificationScript>
    <wsdlAddress></wsdlAddress>
