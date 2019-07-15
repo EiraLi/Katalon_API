@@ -1,71 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>C102944</name>
+   <name>C102943</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>1060173b-0a81-45d3-9722-b203fc3ba86d</testCaseGuid>
+   <testCaseGuid>b5f85801-d85f-477e-a042-a5d077cd5126</testCaseGuid>
    <variable>
       <defaultValue>findTestData('STG_data').getValue(1, 1)</defaultValue>
       <description></description>
-      <id>6ac539ca-b5b3-4cad-9809-f04abb25b1b1</id>
+      <id>ba0b15c0-aba8-4719-9f4b-0ecbb6eb84f9</id>
       <masked>false</masked>
       <name>partner_code</name>
    </variable>
    <variable>
       <defaultValue>findTestData('STG_data').getValue(9, 1)</defaultValue>
       <description></description>
-      <id>5295e5fe-bb42-43d1-b7bc-8562b77cbb33</id>
+      <id>ac3ef707-238e-4b89-966e-cffff4d020e7</id>
       <masked>false</masked>
       <name>url_nurgs</name>
    </variable>
    <variable>
       <defaultValue>findTestData('STG_data').getValue(4, 1)</defaultValue>
       <description></description>
-      <id>b4e1ea32-e57f-473a-a4b5-d01e7e97f9e3</id>
+      <id>72fd6943-593b-4a32-84df-900773955b6c</id>
       <masked>false</masked>
       <name>userid</name>
    </variable>
    <variable>
       <defaultValue>findTestData('STG_data').getValue(6, 1)</defaultValue>
       <description></description>
-      <id>d4c26c45-7391-4f21-aebf-30f7fe0a516c</id>
+      <id>b8c0f6bc-e91e-4474-9e02-32e719f9bbb5</id>
       <masked>false</masked>
       <name>choice</name>
    </variable>
    <variable>
       <defaultValue>findTestData('STG_data').getValue(5, 1)</defaultValue>
       <description></description>
-      <id>24c14672-035f-45ae-b6de-883ee2b07ab1</id>
+      <id>f01a08e5-3a52-492d-ae16-336f93a43526</id>
       <masked>false</masked>
       <name>game_code</name>
    </variable>
    <variable>
       <defaultValue>findTestData('STG_data').getValue(10, 1)</defaultValue>
       <description></description>
-      <id>b044df6b-4a70-4431-9e11-a30623b0273e</id>
+      <id>9a124f0d-3c7b-44c9-997b-eecdbd641c61</id>
       <masked>false</masked>
       <name>url_krug_gw</name>
    </variable>
    <variable>
       <defaultValue>findTestData('STG_data').getValue(3, 1)</defaultValue>
       <description></description>
-      <id>21712d29-b900-48c3-b2df-2e9a6c9930b6</id>
+      <id>eac847d7-7119-4cf3-a481-9d20f20e46e1</id>
       <masked>false</masked>
       <name>secret_key</name>
    </variable>
    <variable>
       <defaultValue>findTestData('STG_data').getValue(2, 1)</defaultValue>
       <description></description>
-      <id>5c3e7f87-a48e-4d52-8f34-4ddb8e5d4c97</id>
+      <id>3be53fa5-6f41-427d-8c5b-c959ffa11a8d</id>
       <masked>false</masked>
       <name>partner</name>
-   </variable>
-   <variable>
-      <defaultValue>findTestData('STG_data').getValue(11, 1)</defaultValue>
-      <description></description>
-      <id>bbdacf12-77ee-4a91-b58b-72475d59dad7</id>
-      <masked>false</masked>
-      <name>url_krug</name>
    </variable>
 </TestCaseEntity>

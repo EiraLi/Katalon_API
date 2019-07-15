@@ -122,6 +122,7 @@ def balance = result_spin.balance
 println(&quot;balance is: &quot;+balance)
 GlobalVariable.balance = balance
 println('GB Balance is'+GlobalVariable.balance)
+
 def round_id = result_spin.round_id
 println(&quot;round id is: &quot;+round_id)
 GlobalVariable.round_id = round_id

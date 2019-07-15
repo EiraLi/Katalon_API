@@ -204,4 +204,14 @@
       <initValue>''</initValue>
       <name>BO_txd_round_id</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>bo_txType</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>BO_player_id</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -26,7 +26,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://${url_krug}/m4/bo/transaction/${transaction_id)</restUrl>
+   <restUrl>https://${url_krug}/m4/bo/transaction/${transaction_id}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -40,7 +40,7 @@
       <name>url_krug</name>
    </variables>
    <variables>
-      <defaultValue>GlobalVariable.transaction_id</defaultValue>
+      <defaultValue>'9e9a12c3-3a6a-45d9-bb2f-7e4e30bd3734'</defaultValue>
       <description></description>
       <id>30a9f3fc-c0ec-4858-acab-87689aef2f73</id>
       <masked>false</masked>
@@ -79,7 +79,9 @@ def BO_txd_round_id = result_BO_transaction.roundid
 println(&quot;BO_transaction_round_id is: &quot; +BO_txd_round_id)
 GlobalVariable.BO_txd_round_id = BO_txd_round_id
 
-def BO_txd_
+def BO_player_id = result_BO_transaction.user_id
+println(&quot;BO_player_id is: &quot; +BO_player_id)
+GlobalVariable.BO_player_id = BO_player_id
 
 </verificationScript>
    <wsdlAddress></wsdlAddress>

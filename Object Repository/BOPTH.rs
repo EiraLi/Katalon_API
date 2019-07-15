@@ -79,18 +79,21 @@ println(&quot;latest balance is: &quot; +latest_bo_balance)
 GlobalVariable.latest_bo_balance = latest_bo_balance
 
 
-def bo_round_id = result_boquery.documents.payload.roundId
+def bo_round_id = result_boquery.documents.payload[0].roundId
 println(&quot;latest bo roundId is: &quot; +bo_round_id)
 GlobalVariable.bo_round_id = bo_round_id
 
-def game_code = result_boquery.documents.payload.gameId
+def game_code = result_boquery.documents.payload[0].gameId
 println(&quot;game code is: &quot; +game_code)
 GlobalVariable.game_code = game_code
 
-def bo_transaction_id = result_boquery.documents.payload[0].txId
+def bo_transaction_id = result_boquery.documents.payload.txId
 println(&quot;transaction id is: &quot; +bo_transaction_id)
 GlobalVariable.bo_transaction_id = bo_transaction_id
 
+def bo_txType = result_boquery.documents.payload.txType
+println(&quot;txType is: &quot; +bo_txType)
+GlobalVariable.bo_txType = bo_txType
 
 
 

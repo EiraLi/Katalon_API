@@ -1,4 +1,5 @@
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
@@ -18,6 +19,7 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import java.io.File as File
 import com.kms.katalon.keyword.excel.ExcelKeywords as ExcelKeywords
+
 
 String newline = System.getProperty('line.separator')
 
@@ -127,14 +129,12 @@ WS.sendRequestAndVerify(findTestObject('BOPTH', [('url_krug') : url_krug, ('user
 //
 //println('bo_transaction_id is:' + bo_transaction_id)
 //double latest_bo_balance = double.parseDouble(GlobalVariable.latest_bo_balance[0])
-
+if ((GlobalVariable.bo_txType == 'SPIN') && GlobalVariable.bo_transaction_id == GlobalVariable.round_detail_transaction_id) {
 ExcelKeywords.setValueToCellByIndex(bopth, 1, 1, GlobalVariable.latest_bo_balance)
-
 ExcelKeywords.setValueToCellByIndex(bopth, 1, 0, GlobalVariable.bo_transaction_id)
-
 ExcelKeywords.setValueToCellByAddresses(bopth, content1)
-
 ExcelKeywords.saveWorkbook(excelTestFile01, workbook01)
+}
 
 // Compare sheets
 CompareSheet = ExcelKeywords.compareTwoSheets(game_history, bopth)
