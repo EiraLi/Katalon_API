@@ -120,7 +120,7 @@ println(&quot;GlobalVariable  gamecode is: &quot;+GlobalVariable.game_code)
 
 def balance = result_spin.balance
 println(&quot;balance is: &quot;+balance)
-GlobalVariable.balance = balance
+GlobalVariable.balance = balance.toPlainString()
 println('GB Balance is'+GlobalVariable.balance)
 
 def round_id = result_spin.round_id
@@ -134,6 +134,14 @@ GlobalVariable.transaction_id = transaction_id
 def win_amount = result_spin.spin_result.win_amount
 println(&quot;win_amount is: &quot;+ win_amount)
 GlobalVariable.win_amount = win_amount
+
+def bet_amount = result_spin.bet_amount
+println(&quot;bet_amount is: &quot;+ bet_amount)
+GlobalVariable.bet_amount = bet_amount
+
+def bet_value = result_spin.bet_value
+println(&quot;bet_value is: &quot;+ bet_value)
+GlobalVariable.bet_value = bet_value
 
 
 if (features != null) {		// Free Spin Triggered

@@ -127,7 +127,7 @@ println(&quot;GlobalVariable  gamecode is: &quot;+GlobalVariable.game_code)
 
 def balance = result_spin.balance
 println(&quot;balance is: &quot;+balance)
-GlobalVariable.balance = balance
+GlobalVariable.balance = balance.toPlainString()
 
 def round_id = result_spin.round_id
 println(&quot;round id is: &quot;+round_id)

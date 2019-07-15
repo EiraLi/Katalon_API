@@ -111,7 +111,7 @@ GlobalVariable.features = features
 
 def login_balance = result_login.state.balance
 println(&quot;balance is: &quot;+login_balance)
-GlobalVariable.login_balance = login_balance
+GlobalVariable.login_balance = login_balance.toPlainString()
 
 def login_round_id = result_login.state.round_id
 println(&quot;result login round id is: &quot;+login_round_id)

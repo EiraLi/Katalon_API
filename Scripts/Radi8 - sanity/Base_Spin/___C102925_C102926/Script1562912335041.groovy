@@ -108,8 +108,8 @@ def balance = GlobalVariable.balance
 
 //login_balance_result = login_balance.toPlainString()
 
-println('login_balance is: ' + login_balance.toPlainString())
-println('balance is: ' + balance.toPlainString())
+println('login_balance is: ' + login_balance)
+println('balance is: ' + balance)
 println('login_win_amount is: ' + GlobalVariable.login_win_amount)
 println('win_amount is: ' + GlobalVariable.win_amount)
 

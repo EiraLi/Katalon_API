@@ -68,4 +68,11 @@
       <masked>false</masked>
       <name>url_krug</name>
    </variable>
+   <variable>
+      <defaultValue>GlobalVariable.transaction_id</defaultValue>
+      <description></description>
+      <id>39d34f93-adbf-4ceb-a743-10ac700e8cbe</id>
+      <masked>false</masked>
+      <name>transaction_id</name>
+   </variable>
 </TestCaseEntity>

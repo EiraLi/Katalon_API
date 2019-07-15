@@ -40,7 +40,7 @@
       <name>url_krug</name>
    </variables>
    <variables>
-      <defaultValue>'9e9a12c3-3a6a-45d9-bb2f-7e4e30bd3734'</defaultValue>
+      <defaultValue>GlobalVariable.transaction_id</defaultValue>
       <description></description>
       <id>30a9f3fc-c0ec-4858-acab-87689aef2f73</id>
       <masked>false</masked>
@@ -73,7 +73,7 @@ def result_BO_transaction = BO_transaction.parseText(response.getResponseBodyCon
 
 def BO_txd_balance = result_BO_transaction.balance
 println(&quot;result_BO_transaction balance is: &quot; +BO_txd_balance)
-GlobalVariable.BO_txd_balance = BO_txd_balance
+GlobalVariable.BO_txd_balance = Long.toString(BO_txd_balance)
 
 def BO_txd_round_id = result_BO_transaction.roundid
 println(&quot;BO_transaction_round_id is: &quot; +BO_txd_round_id)

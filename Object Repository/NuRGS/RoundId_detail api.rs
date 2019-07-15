@@ -98,6 +98,12 @@ GlobalVariable.player_id = player_id
 
 def round_total_win = result_roundid_detail.spin_results[0].total_win
 println(&quot;round_total_win is:&quot; +round_total_win)
-GlobalVariable.round_total_win = round_total_win</verificationScript>
+GlobalVariable.round_total_win = round_total_win
+
+def round_total_bet = result_roundid_detail.spin_results[0].total_bet
+println(&quot;round_total_bet is:&quot; +round_total_bet)
+GlobalVariable.round_total_bet = round_total_bet
+
+</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

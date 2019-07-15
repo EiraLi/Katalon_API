@@ -89,10 +89,23 @@ for (int i = 1; i <= 5; i++) {
                     , ('partner_code') : GlobalVariable.partner_code, ('game_code') : GlobalVariable.game_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
                     , ('state_tag') : GlobalVariable.state_tag]))
     }
-}
+	println("*******Global transaction id is:*******"+GlobalVariable.transaction_id)
+	}
+WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('url_krug_gw') : url_krug_gw, ('partner') : partner
+	, ('secret_key') : secret_key, ('userid') : userid]))
 
+WS.sendRequestAndVerify(findTestObject('NuRGS/Login_Final', [('url_nurgs') : url_nurgs, ('partner') : partner, ('session_token') : GlobalVariable.session_token
+	, ('game_code') : game_code]))
 WS.sendRequestAndVerify(findTestObject('BO_transaction api', [('url_krug') : url_krug, ('transaction_id') : GlobalVariable.transaction_id]))
 
-assert ((GlobalVariable.balance == GlobalVariable.BO_txd_balance) && (GlobalVariable.round_id == GlobalVariable.BO_txd_round_id)) && 
-(GlobalVariable.player_id == GlobalVariable.BO_player_id)
+println('GlobalVariable.balance is:' + GlobalVariable.balance)
+println('GlobalVariable.BO_txd_balance is:' + GlobalVariable.BO_txd_balance)
+println('GlobalVariable.round_id is:' + GlobalVariable.round_id)
+println('GlobalVariable.BO_txd_round_id is:' + GlobalVariable.BO_txd_round_id)
+println('GlobalVariable.player_id is:' + GlobalVariable.player_id)
+println('GlobalVariable.BO_player_id is:' + GlobalVariable.BO_player_id)
+println(GlobalVariable.balance.getClass().getName()) //印出balance 是什麼格式
+println(GlobalVariable.BO_txd_balance.getClass().getName())
+
+assert GlobalVariable.balance == GlobalVariable.BO_txd_balance && GlobalVariable.round_id == GlobalVariable.BO_txd_round_id && GlobalVariable.player_id == GlobalVariable.BO_player_id
 
