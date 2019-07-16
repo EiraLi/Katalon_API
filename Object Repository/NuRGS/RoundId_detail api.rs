@@ -86,9 +86,10 @@ def round_detail_transaction_id = result_roundid_detail.spin_results[0].transact
 println(&quot;transaction id is:&quot; +round_detail_transaction_id)
 GlobalVariable.round_detail_transaction_id = round_detail_transaction_id
 
-def round_balance = result_roundid_detail.spin_results[0].balance
-println(&quot;balance is:&quot; +round_balance)
-def round_detail_balance = Long.toString(round_balance)
+def round_detail_balance = result_roundid_detail.spin_results[0].balance
+println(&quot;balance is:&quot; +round_detail_balance)
+println(&quot;round_balance is:&quot; +round_detail_balance.getClass().getName())
+//def round_detail_balance = Long.toString(round_balance)
 GlobalVariable.round_detail_balance = round_detail_balance
 
 
@@ -104,6 +105,16 @@ def round_total_bet = result_roundid_detail.spin_results[0].total_bet
 println(&quot;round_total_bet is:&quot; +round_total_bet)
 GlobalVariable.round_total_bet = round_total_bet
 
+def round_total_free_spin_win_amount = result_roundid_detail.spin_results[0].features_triggered[0].feature_state.total_free_spin_win_amount
+println(&quot;round_total_free_spin_win_amount is:&quot; +round_total_free_spin_win_amount)
+println(&quot;round_total_free_spin_win_amount is:&quot; +round_total_free_spin_win_amount.getClass().getName())
+GlobalVariable.round_total_free_spin_win_amount = round_total_free_spin_win_amount
+
+
+def round_bet_value = result_roundid_detail.spin_results[0].bet_value
+println(&quot;round_bet_value is:&quot; +round_bet_value)
+println(&quot;round_bet_value is:&quot; +round_bet_value.getClass().getName())
+GlobalVariable.round_bet_value = round_bet_value
 </verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

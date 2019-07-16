@@ -35,9 +35,11 @@ get_session = WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token',
 login = WS.sendRequestAndVerify(findTestObject('NuRGS/Login_Final', [('url_nurgs') : url_nurgs, ('partner') : partner, ('session_token') : GlobalVariable.session_token
             , ('game_code') : game_code]))
 
+println('login_balance is: ' + GlobalVariable.login_balance)
+
 String newline = System.getProperty('line.separator')
 
-for (int i = 1; i <= 3; i++) {
+for (int i = 1; i <= 6; i++) {
     def balance = GlobalVariable.balance
 
     def features = GlobalVariable.features
@@ -57,14 +59,10 @@ for (int i = 1; i <= 3; i++) {
     def rgs_session_token = GlobalVariable.rgs_session_token
 
     def state_tag = GlobalVariable.state_tag
-	
-	def win_amount = GlobalVariable.win_amount
-	
-    if (features == null) {
-        spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/Take turn_Base_spin', [('url_nurgs') : url_nurgs, ('player_id') : GlobalVariable.player_id
-                    , ('partner_code') : GlobalVariable.partner_code, ('game_code') : GlobalVariable.game_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
-                    , ('state_tag') : GlobalVariable.state_tag]))
-    } else if ((features != null) && 'PICK'.equals(features_type)) {
+
+    def win_amount = GlobalVariable.win_amount
+
+    if ((features != null) && 'PICK'.equals(features_type)) {
         if (free_spin_pick != true) {
             spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/Take turn_pick', [('url_nurgs') : url_nurgs, ('player_id') : GlobalVariable.player_id
                         , ('partner_code') : GlobalVariable.partner_code, ('game_code') : GlobalVariable.game_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
@@ -90,30 +88,29 @@ for (int i = 1; i <= 3; i++) {
                     , ('state_tag') : GlobalVariable.state_tag]))
     }
 }
+println("@@@@@@GlobalVariable.round_id is:@@@@@@"+newline+GlobalVariable.round_id)
+WS.sendRequestAndVerify(findTestObject('NuRGS/RoundId_detail api', [('partner') : partner, ('round_id') : GlobalVariable.round_id, ('game_code') : game_code, ('partner_code') : partner_code]))
+//把 stirng 轉換成 number 再相加
+//String number = GlobalVariable.round_detail_balance
+//int result = Integer.parseInt(number)
+//int number2 = Integer.parseInt(GlobalVariable.round_total_free_spin_win_amount)
+//
+//int number3 = Integer.parseInt(GlobalVariable.round_bet_value)
+
+
+
+free_spin_win_amount_total_balance = GlobalVariable.round_detail_balance + GlobalVariable.round_total_free_spin_win_amount
+println("*****GlobalVariable.round_detail_balance****"+newline+GlobalVariable.round_detail_balance)
+println("*****GlobalVariable.round_total_free_spin_win_amount*****"+newline+GlobalVariable.round_total_free_spin_win_amount)
+println("****GlobalVariable.round_bet_value****" +newline+GlobalVariable.round_bet_value)
+println("*****free_spin_win_amount_total_balance is:******"+free_spin_win_amount_total_balance)
 
 
 get_session = WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('url_krug_gw') : url_krug_gw, ('partner') : partner
-            , ('secret_key') : secret_key, ('userid') : userid]))
+	, ('secret_key') : secret_key, ('userid') : userid]))
 
 login = WS.sendRequestAndVerify(findTestObject('NuRGS/Login_Final', [('url_nurgs') : url_nurgs, ('partner') : partner, ('session_token') : GlobalVariable.session_token
-            , ('game_code') : game_code]))
+	, ('game_code') : game_code]))
+println("******GlobalVariable.login_balance is: ********"+GlobalVariable.login_balance)
 
-def login_balance = GlobalVariable.login_balance
-def balance = GlobalVariable.balance
-
-//login_balance_result = login_balance.toPlainString()
-
-println('login_balance is: ' + login_balance)
-println('balance is: ' + balance)
-println('login_win_amount is: ' + GlobalVariable.login_win_amount)
-println('win_amount is: ' + GlobalVariable.win_amount)
-
-//assert balance == login_balance_result
-assert GlobalVariable.login_balance == GlobalVariable.balance && GlobalVariable.login_win_amount == GlobalVariable.win_amount
-
-
-//*****check (bet, balance, symbols)
-if (features == null) {
-	
-}
-
+assert GlobalVariable.login_balance == free_spin_win_amount_total_balance

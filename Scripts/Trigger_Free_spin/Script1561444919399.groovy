@@ -12,12 +12,24 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+//below for exporting to excel
+import java.io.FileInputStream as FileInputStream
+import java.io.FileNotFoundException as FileNotFoundException
+import java.io.IOException as IOException
+import java.util.Date as Date
+import org.apache.poi.xssf.usermodel.XSSFCell as XSSFCell
+import org.apache.poi.xssf.usermodel.XSSFRow as XSSFRow
+import org.apache.poi.xssf.usermodel.XSSFSheet as XSSFSheet
+import org.apache.poi.xssf.usermodel.XSSFWorkbook as XSSFWorkbook
+import java.lang.String as String
+import static groovy.test.GroovyAssert.shouldFail
+import static groovy.test.GroovyAssert.assertNotNull
+WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('url_krug_gw') : url_krug_gw, ('partner') : partner, ('secret_key') : secret_key, ('userid') : userid]))
 
-WS.sendRequestAndVerify(findTestObject('Trigger-free-spin/Get_session_token', [('url') : 'krug-gw.star0ad.com', ('player_id') : 'NewBBINTEST_TestUserCNY', ('partner') : 'f0841d74-6a7d-f0a0-8779-df0dc556f150', ('secretkey') : 'cac491ae-bc9e-4385-80d3-d1093803a266']))
-
-WS.sendRequestAndVerify(findTestObject('Trigger-free-spin/Login', [('url') : 'nurgs.star0ad.com', ('partner') : 'f0841d74-6a7d-f0a0-8779-df0dc556f150', ('session_token') : GlobalVariable.session_token, ('game_code') : 'NG-1012']))
+WS.sendRequestAndVerify(findTestObject('NuRGS/Login_Final', [('url_nurgs') : url_nurgs, ('partner') : partner, ('session_token') : GlobalVariable.session_token, ('game_code') : game_code]))
 
 for (int i = 1; i <= 70; i++) {
-    response = WS.sendRequestAndVerify(findTestObject('Trigger-free-spin/Take_turn_base_spin', [('url') : 'nurgs.star0ad.com', ('player_id') : GlobalVariable.player_id, ('partner_code') : GlobalVariable.partner_code, ('game_code') : GlobalVariable.game_code, ('rgs_session_token') : GlobalVariable.rgs_session_token, ('state_tag') : GlobalVariable.state_tag]))
+    response = WS.sendRequestAndVerify(findTestObject('NuRGS/Take turn_Base_spin', [('url_nurgs') : url_nurgs, ('player_id') : GlobalVariable.player_id, ('partner_code') : GlobalVariable.partner_code, ('game_code') : GlobalVariable.game_code
+                , ('rgs_session_token') : GlobalVariable.rgs_session_token, ('state_tag') : GlobalVariable.state_tag]))
 }
 

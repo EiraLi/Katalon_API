@@ -144,6 +144,7 @@ println(&quot;bet_value is: &quot;+ bet_value)
 GlobalVariable.bet_value = bet_value
 
 
+
 if (features != null) {		// Free Spin Triggered
 	def features_type = result_spin.features[0].type
 	println (&quot;...value extracted is :&quot;+features)

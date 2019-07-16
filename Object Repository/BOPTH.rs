@@ -74,7 +74,8 @@ def boquery = new groovy.json.JsonSlurper()
 def result_boquery = boquery.parseText(response.getResponseBodyContent())
 
 def bo_balance = result_boquery.documents.payload[0].balance
-double latest_bo_balance = Double.parseDouble(bo_balance)
+double number = Double.parseDouble(bo_balance)*100
+//String latest_bo_balance = String.format(&quot;%.0f&quot;, number)
 println(&quot;latest balance is: &quot; +latest_bo_balance)
 GlobalVariable.latest_bo_balance = latest_bo_balance
 
@@ -87,11 +88,11 @@ def game_code = result_boquery.documents.payload[0].gameId
 println(&quot;game code is: &quot; +game_code)
 GlobalVariable.game_code = game_code
 
-def bo_transaction_id = result_boquery.documents.payload.txId
+def bo_transaction_id = result_boquery.documents.payload[0].txId
 println(&quot;transaction id is: &quot; +bo_transaction_id)
 GlobalVariable.bo_transaction_id = bo_transaction_id
 
-def bo_txType = result_boquery.documents.payload.txType
+def bo_txType = result_boquery.documents.payload[0].txType
 println(&quot;txType is: &quot; +bo_txType)
 GlobalVariable.bo_txType = bo_txType
 

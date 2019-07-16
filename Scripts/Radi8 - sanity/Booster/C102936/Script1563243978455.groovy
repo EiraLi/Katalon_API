@@ -1,8 +1,5 @@
-import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
-import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
@@ -15,31 +12,57 @@ import internal.GlobalVariable as GlobalVariable
 import net.bytebuddy.implementation.bytecode.constant.NullConstant as NullConstant
 import com.kms.katalon.core.logging.KeywordLogger as KeywordLogger
 import groovy.json.JsonSlurper as JsonSlurper
-import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 //below for exporting to excel
-import java.io.FileInputStream as FileInputStream
-import java.io.FileNotFoundException as FileNotFoundException
-import java.io.IOException as IOException
-import java.util.Date as Date
-import org.apache.poi.xssf.usermodel.XSSFCell as XSSFCell
-import org.apache.poi.xssf.usermodel.XSSFRow as XSSFRow
-import org.apache.poi.xssf.usermodel.XSSFSheet as XSSFSheet
-import org.apache.poi.xssf.usermodel.XSSFWorkbook as XSSFWorkbook
-import java.lang.String as String
-import static groovy.test.GroovyAssert.shouldFail
-import static groovy.test.GroovyAssert.assertNotNull
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import java.io.File as File
+import com.kms.katalon.keyword.excel.ExcelKeywords as ExcelKeywords
 
-get_session = WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('url_krug_gw') : url_krug_gw, ('partner') : partner
-            , ('secret_key') : secret_key, ('userid') : userid]))
-
-login = WS.sendRequestAndVerify(findTestObject('NuRGS/Login_Final', [('url_nurgs') : url_nurgs, ('partner') : partner, ('session_token') : GlobalVariable.session_token
-            , ('game_code') : game_code]))
 
 String newline = System.getProperty('line.separator')
 
-for (int i = 1; i <= 3; i++) {
-    def balance = GlobalVariable.balance
+String excelTestFile01 = '/Users/eiralee/EiraLi-Katalon_API/Reports/TestFile01.xls'
 
+//建立 excel 檔
+ExcelKeywords.createExcelFile(excelTestFile01)
+//確認 excel 檔是否有被建立
+File testfile = new File(excelTestFile01)
+assert testfile.exists() == true
+//建立 sheet
+workbook01 = ExcelKeywords.getWorkbook(excelTestFile01)
+ExcelKeywords.createExcelSheets(workbook01, ['game_history', 'bopth'])
+ExcelKeywords.saveWorkbook(excelTestFile01, workbook01)
+//確認 sheet 是否有被建立
+String[] SheetCreated01 = ['Sheet0', 'game_history', 'bopth']
+workbook01 = ExcelKeywords.getWorkbook(excelTestFile01)
+assert SheetCreated01 == ExcelKeywords.getSheetNames(workbook01)
+//write some date to sheet1
+game_history = ExcelKeywords.getExcelSheet(workbook01, 'game_history')
+Map content = new HashMap()
+content.putAt('A1', 'transaction_id')
+content.putAt('B1', 'Balance')
+ExcelKeywords.setValueToCellByAddresses(game_history, content)
+ExcelKeywords.saveWorkbook(excelTestFile01, workbook01)
+//write some date to sheet2
+bopth = ExcelKeywords.getExcelSheet(workbook01, 'bopth')
+Map content1 = new HashMap()
+content1.putAt('A1', 'transaction_id')
+content1.putAt('B1', 'Balance')
+ExcelKeywords.setValueToCellByAddresses(bopth, content1)
+ExcelKeywords.saveWorkbook(excelTestFile01, workbook01)
+
+//***Check if BOPTH history is consistent with in-game result  ***
+
+WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('url_krug_gw') : url_krug_gw, ('partner') : partner
+            , ('secret_key') : secret_key, ('userid') : userid]))
+
+WS.sendRequestAndVerify(findTestObject('NuRGS/Login_Final', [('url_nurgs') : url_nurgs, ('partner') : partner, ('session_token') : GlobalVariable.session_token
+            , ('game_code') : game_code]))
+
+
+for (int i = 1; i <= 10; i++) {
     def features = GlobalVariable.features
 
     def features_type = GlobalVariable.features_type
@@ -50,17 +73,13 @@ for (int i = 1; i <= 3; i++) {
 
     def free_spin_left = GlobalVariable.free_spin_left
 
-    def round_id = GlobalVariable.round_id
+    def provider = GlobalVariable.provider
+
+    def booster_round_win = GlobalVariable.booster_round_win
 
     def transaction_id = GlobalVariable.transaction_id
 
-    def rgs_session_token = GlobalVariable.rgs_session_token
-
-    def state_tag = GlobalVariable.state_tag
-	
-	def win_amount = GlobalVariable.win_amount
-	
-    if (features == null) {
+     if (features == null) {
         spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/Take turn_Base_spin', [('url_nurgs') : url_nurgs, ('player_id') : GlobalVariable.player_id
                     , ('partner_code') : GlobalVariable.partner_code, ('game_code') : GlobalVariable.game_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
                     , ('state_tag') : GlobalVariable.state_tag]))
@@ -91,15 +110,29 @@ for (int i = 1; i <= 3; i++) {
     }
 }
 
+//check in-game history(round_id_api)
+WS.sendRequestAndVerify(findTestObject('NuRGS/RoundId_detail api', [('partner') : partner, ('round_id') : GlobalVariable.round_id
+            , ('game_code') : game_code, ('partner_code') : partner_code]))
 
+def round_detail_transaction_id = GlobalVariable.round_detail_transaction_id
+def round_detail_balance = GlobalVariable.round_detail_balance
+//def latest_round_detail_balance = Long.toString(round_detail_balance)
+ExcelKeywords.setValueToCellByIndex(game_history, 1, 1, GlobalVariable.round_detail_balance)
+ExcelKeywords.setValueToCellByIndex(game_history, 1, 0, GlobalVariable.round_detail_transaction_id)
+ExcelKeywords.setValueToCellByAddresses(game_history, content)
+ExcelKeywords.saveWorkbook(excelTestFile01, workbook01)
 
-WS.sendRequestAndVerify(findTestObject('Object Repository/NuRGS/RoundId_detail api'))
+//check BOPTH
+WS.sendRequestAndVerify(findTestObject('BOPTH', [('url_krug') : url_krug, ('userid') : userid, ('partner') : partner, ('start_date') : start_date, ('end_date') : end_date]))
 
+ExcelKeywords.setValueToCellByIndex(bopth, 1, 1, GlobalVariable.latest_bo_balance)
+ExcelKeywords.setValueToCellByIndex(bopth, 1, 0, GlobalVariable.bo_transaction_id)
+ExcelKeywords.setValueToCellByAddresses(bopth, content1)
+ExcelKeywords.saveWorkbook(excelTestFile01, workbook01)
 
-//assert ingame history == base spin result
-assert GlobalVariable.login_balance == GlobalVariable.balance && GlobalVariable.login_win_amount == GlobalVariable.win_amount
+// Compare sheets
+CompareSheet = ExcelKeywords.compareTwoSheets(game_history, bopth)
 
+println('Result of compare sheet01 and sheet02 is: ' + CompareSheet)
 
-//*****check (bet, balance, symbols)
-  
 
