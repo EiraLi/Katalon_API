@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>%Users%eiralee%EiraLi-Katalon_API%INT_env%Kataon_API_Testing.prj</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.groovy.core.groovyNature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>kat-3302948631787240830.groovy</name>
+			<type>1</type>
+			<location>/var/folders/jv/m57cl6r527jgr1mjg5_9h8vw0000gn/T/Katalon/Web Services/kat-3302948631787240830.groovy</location>
+		</link>
+		<link>
+			<name>kat-3578240928623432552.groovy</name>
+			<type>1</type>
+			<location>/var/folders/jv/m57cl6r527jgr1mjg5_9h8vw0000gn/T/Katalon/Web Services/kat-3578240928623432552.groovy</location>
+		</link>
+	</linkedResources>
+	<filteredResources>
+		<filter>
+			<id>1563354860582</id>
+			<name></name>
+			<type>10</type>
+			<matcher>
+				<id>org.eclipse.core.resources.regexFilterMatcher</id>
+				<arguments>.*\.svn$</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1563354860589</id>
+			<name></name>
+			<type>6</type>
+			<matcher>
+				<id>org.eclipse.core.resources.regexFilterMatcher</id>
+				<arguments>(.*\.svn-base$)|(.*\.png$)|(.*\.log$)|(.*\.xlsx$)|(.*\.xls$)|(.*\.csv$)|(.*\.txt$)</arguments>
+			</matcher>
+		</filter>
+	</filteredResources>
+</projectDescription>

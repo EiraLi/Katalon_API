@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Trigger_Free_spin</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d12d1154-c599-4ab5-bbc7-6abe66f1410c</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(10, 1)</defaultValue>
+      <description></description>
+      <id>7603d337-0444-4b16-a5b2-6cfbb739a75f</id>
+      <masked>false</masked>
+      <name>url_krug_gw</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>fc30803a-ae90-472a-aa58-ce822795a868</id>
+      <masked>false</masked>
+      <name>partner</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(3, 1)</defaultValue>
+      <description></description>
+      <id>0808b081-a92c-468d-a939-05b127b7801b</id>
+      <masked>false</masked>
+      <name>secret_key</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(4, 1)</defaultValue>
+      <description></description>
+      <id>a336f780-7a20-4ae0-a01d-194c8beff2f0</id>
+      <masked>false</masked>
+      <name>userid</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(9, 1)</defaultValue>
+      <description></description>
+      <id>cc914533-5b2d-44e5-a680-a443d41df357</id>
+      <masked>false</masked>
+      <name>url_nurgs</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(5, 1)</defaultValue>
+      <description></description>
+      <id>80572005-f44c-4773-ab28-4161f58d682f</id>
+      <masked>false</masked>
+      <name>game_code</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('STG_data').getValue(6, 1)</defaultValue>
+      <description></description>
+      <id>d5fbe024-9f64-41ab-892d-c35a38bbe8cb</id>
+      <masked>false</masked>
+      <name>choice</name>
+   </variable>
+</TestCaseEntity>
