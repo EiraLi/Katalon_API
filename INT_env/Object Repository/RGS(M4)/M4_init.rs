@@ -37,7 +37,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://${partner}.${env}/m4/gameservice/init/${M4_recorder}</restUrl>
+   <restUrl>https://${partner}.3655oule.com/m4/gameservice/init/${M4_recorder}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -52,13 +52,6 @@
    </variables>
    <variables>
       <defaultValue>findTestData('INT_data').getValue(14, 1)</defaultValue>
-      <description></description>
-      <id>b428d4df-ffae-4b07-b35c-d9adf100b023</id>
-      <masked>false</masked>
-      <name>env</name>
-   </variables>
-   <variables>
-      <defaultValue>findTestData('INT_data').getValue(15, 1)</defaultValue>
       <description></description>
       <id>d9fa1f69-174d-478f-9a86-7b2b02da7974</id>
       <masked>false</masked>

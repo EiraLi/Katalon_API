@@ -294,6 +294,136 @@ public class GlobalVariable {
      */
     public static Object M4_total_bonus_spins
      
+    /**
+     * <p></p>
+     */
+    public static Object M4_reels_spin_result
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel3_sym1
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel3_sym2
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel3_sym3
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel4_sym1
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel4_sym2
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel4_sym3
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel5_sym1
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel5_sym2
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel5_sym3
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel3_sym1_w
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel3_sym2_w
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel3_sym3_w
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel4_sym1_w
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel4_sym2_w
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel4_sym3_w
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel5_sym1_w
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel5_sym2_w
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel5_sym3_w
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel3_w
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel4_w
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel5_w
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel3_has_wild
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel5_has_wild
+     
+    /**
+     * <p></p>
+     */
+    public static Object reel4_has_wild
+     
+    /**
+     * <p></p>
+     */
+    public static Object counter
+     
 
     static {
         try {
@@ -358,6 +488,32 @@ public class GlobalVariable {
             M4_spin_current_balance = selectedVariables['M4_spin_current_balance']
             M4_spin_transaction_id = selectedVariables['M4_spin_transaction_id']
             M4_total_bonus_spins = selectedVariables['M4_total_bonus_spins']
+            M4_reels_spin_result = selectedVariables['M4_reels_spin_result']
+            reel3_sym1 = selectedVariables['reel3_sym1']
+            reel3_sym2 = selectedVariables['reel3_sym2']
+            reel3_sym3 = selectedVariables['reel3_sym3']
+            reel4_sym1 = selectedVariables['reel4_sym1']
+            reel4_sym2 = selectedVariables['reel4_sym2']
+            reel4_sym3 = selectedVariables['reel4_sym3']
+            reel5_sym1 = selectedVariables['reel5_sym1']
+            reel5_sym2 = selectedVariables['reel5_sym2']
+            reel5_sym3 = selectedVariables['reel5_sym3']
+            reel3_sym1_w = selectedVariables['reel3_sym1_w']
+            reel3_sym2_w = selectedVariables['reel3_sym2_w']
+            reel3_sym3_w = selectedVariables['reel3_sym3_w']
+            reel4_sym1_w = selectedVariables['reel4_sym1_w']
+            reel4_sym2_w = selectedVariables['reel4_sym2_w']
+            reel4_sym3_w = selectedVariables['reel4_sym3_w']
+            reel5_sym1_w = selectedVariables['reel5_sym1_w']
+            reel5_sym2_w = selectedVariables['reel5_sym2_w']
+            reel5_sym3_w = selectedVariables['reel5_sym3_w']
+            reel3_w = selectedVariables['reel3_w']
+            reel4_w = selectedVariables['reel4_w']
+            reel5_w = selectedVariables['reel5_w']
+            reel3_has_wild = selectedVariables['reel3_has_wild']
+            reel5_has_wild = selectedVariables['reel5_has_wild']
+            reel4_has_wild = selectedVariables['reel4_has_wild']
+            counter = selectedVariables['counter']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)

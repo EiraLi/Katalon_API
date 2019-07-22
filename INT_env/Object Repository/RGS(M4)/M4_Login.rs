@@ -30,7 +30,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://${partner}.${env}/m4/gameservice/login/</restUrl>
+   <restUrl>https://${partner}.3655oule.com/m4/gameservice/login/</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -42,13 +42,6 @@
       <id>e76ea71a-c50f-4e6a-a37c-21437c0489cf</id>
       <masked>false</masked>
       <name>partner</name>
-   </variables>
-   <variables>
-      <defaultValue>findTestData('INT_data').getValue(14, 1)</defaultValue>
-      <description></description>
-      <id>efa05439-bbc9-4f00-9796-be1e074b0021</id>
-      <masked>false</masked>
-      <name>env</name>
    </variables>
    <variables>
       <defaultValue>findTestData('INT_data').getValue(5, 1)</defaultValue>

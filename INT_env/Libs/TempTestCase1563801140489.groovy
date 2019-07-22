@@ -14,9 +14,9 @@ DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.m
 DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.cucumber.keyword.internal.CucumberDriverCleaner())
 
 
-RunConfiguration.setExecutionSettingFile('/var/folders/jv/m57cl6r527jgr1mjg5_9h8vw0000gn/T/Katalon/Test Cases/M4-Game/Login _and_Spin/20190718_152851/execution.properties')
+RunConfiguration.setExecutionSettingFile('/var/folders/jv/m57cl6r527jgr1mjg5_9h8vw0000gn/T/Katalon/Test Cases/Trigger_Free_Spin_Final/20190722_211210/execution.properties')
 
 TestCaseMain.beforeStart()
 
-        TestCaseMain.runTestCase('Test Cases/M4-Game/Login _and_Spin', new TestCaseBinding('Test Cases/M4-Game/Login _and_Spin',[:]), FailureHandling.STOP_ON_FAILURE , false)
+        TestCaseMain.runTestCase('Test Cases/Trigger_Free_Spin_Final', new TestCaseBinding('Test Cases/Trigger_Free_Spin_Final',[:]), FailureHandling.STOP_ON_FAILURE , false)
     

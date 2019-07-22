@@ -28,36 +28,51 @@ import static groovy.test.GroovyAssert.assertNotNull
 WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('url_krug_gw') : url_krug_gw, ('partner') : partner
             , ('secret_key') : secret_key, ('userid') : userid]))
 
-WS.sendRequestAndVerify(findTestObject('NuRGS/Login_Final', [('url_nurgs') : url_nurgs, ('partner') : partner, ('session_token') : GlobalVariable.session_token
-            , ('game_code') : game_code]))
+WS.sendRequestAndVerify(findTestObject('RGS(M4)/M4_Login', [('partner') : partner, ('env') : env, ('game_code') : game_code
+            , ('session_token') : GlobalVariable.session_token]))
 
-for (int i = 1; i <= 200; i++) {
-    def features = GlobalVariable.features
+WS.sendRequestAndVerify(findTestObject('RGS(M4)/M4_init', [('partner') : partner, ('env') : env, ('M4_recorder') : M4_recorder
+            , ('M4_login_user_id') : GlobalVariable.M4_login_user_id]))
 
-    def round_id = GlobalVariable.round_id
+println('M4_login_user_id is: ' + GlobalVariable.M4_login_user_id)
 
-    def free_spin_pick = GlobalVariable.free_spin_pick
+println('GlobalVariable.M4_init_balance is: ' + GlobalVariable.M4_init_balance)
 
-    def free_spin_complete = GlobalVariable.free_spin_complete
+//ArrayList<String> wild_scatter = new ArrayList<String>()
+//wild_scatter.add("WILD_Expanding")
+//wild_scatter.add("WILD_Normal")
+//wild_scatter.add("WILD_Double")
+//wild_scatter.add("WILD_ExtraFG")
+//wild_scatter.add("WILD_Triple")
+//
+//ArrayList<String> other_scatter = new ArrayList<String>()
+//wild_scatter.add("A")
+//wild_scatter.add("K")
+//wild_scatter.add("Q")
+//wild_scatter.add("J")
+//wild_scatter.add("PIC1")
+//wild_scatter.add("PIC2")
+//wild_scatter.add("PIC3")
+//for (int i=0; i<=10; i++){
+//if (M4_reel3_symbol1.contains(other_scatter) && M4_reel3_symbol2.contains(other_scatter) && M4_reel3_symbol2.contains(other_scatter)){
+//	spin_result = WS.sendRequestAndVerify(findTestObject('Object Repository/RGS(M4)/M4_spin'))
+//	break
+//	println("Success!!!!")
+//}
+//}
+//
+//for (int i=0; i < M4_reels_spin_result.reels.size(); i++) {
+//	def M4_reels_spin_result = GlobalVariable.M4_reels_spin_result
+//    for (int j=0; j < M4_reels_spin_result.reels[i].symbols.size(); j++) {
+//		Println(M4_reels_spin_result.reels[i].symbols[j])
+//    }
+//}
+for (int i = 0; i < M4_reels_spin_result.reels.size(); i++) {
+    spin_result = WS.sendRequestAndVerify(findTestObject('RGS(M4)/M4_spin', [('partner') : partner, ('env') : env, ('rgs_session_token') : GlobalVariable.rgs_session_token
+                , ('M4_Login_user_id') : GlobalVariable.M4_login_user_id]))
 
-    def free_spin_left = GlobalVariable.free_spin_left
-
-    if (features == null) {
-        response = WS.sendRequestAndVerify(findTestObject('NuRGS/Take turn_Base_spin', [('url_nurgs') : url_nurgs, ('player_id') : GlobalVariable.player_id
-                    , ('partner_code') : GlobalVariable.partner_code, ('game_code') : GlobalVariable.game_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
-                    , ('state_tag') : GlobalVariable.state_tag]))
-    } else if ((features != null) && (free_spin_pick != true)) {
-        break
-    } else if (((features != null) && (free_spin_pick == true)) && (free_spin_complete == true)) {
-        response = WS.sendRequestAndVerify(findTestObject('NuRGS/Take turn_Base_spin', [('url_nurgs') : url_nurgs, ('player_id') : GlobalVariable.player_id
-                    , ('partner_code') : GlobalVariable.partner_code, ('game_code') : GlobalVariable.game_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
-                    , ('state_tag') : GlobalVariable.state_tag]))
-    } else if (((features != null) && (free_spin_pick == true)) && (free_spin_complete != true)) {
-        response = WS.sendRequestAndVerify(findTestObject('NuRGS/Take turn_free_spin_left', [('url_nurgs') : url_nurgs, ('player_id') : GlobalVariable.player_id, ('partner_code') : GlobalVariable.partner_code
-                    , ('game_code') : GlobalVariable.game_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
-                    , ('state_tag') : GlobalVariable.state_tag]))
+    for (int j = 0; j < M4_reels_spin_result.reels[i].symbols.size(); j++) {
+        Println(M4_reels_spin_result.reels[i].symbols[j])
     }
-    
-    println('round id is: ' + GlobalVariable.round_id)
 }
 
