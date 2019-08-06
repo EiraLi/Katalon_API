@@ -26,7 +26,7 @@ println('M4_login_user_id is: ' + GlobalVariable.M4_login_user_id)
 
 println('GlobalVariable.M4_init_balance is: ' + GlobalVariable.M4_init_balance)
 
-//WS.sendRequestAndVerify(findTestObject('RGS(M4)/M4_spin', [('partner') : partner, ('env') : env, ('rgs_session_token') : GlobalVariable.rgs_session_token, ('M4_Login_user_id') : GlobalVariable.M4_login_user_id]))
+//WS.sendRequestAndVerify(findTestObject('RGS(M4)/M4_spin_backup', [('partner') : partner, ('env') : env, ('rgs_session_token') : GlobalVariable.rgs_session_token, ('M4_Login_user_id') : GlobalVariable.M4_login_user_id]))
 
 
 
@@ -34,7 +34,7 @@ for (int i = 1; i <= 600; i++) {
     def M4_total_bonus_spins = GlobalVariable.M4_total_bonus_spins
 
    
-        spin_result = WS.sendRequestAndVerify(findTestObject('RGS(M4)/M4_spin', [('partner') : partner, ('env') : env, ('rgs_session_token') : GlobalVariable.rgs_session_token
+        spin_result = WS.sendRequestAndVerify(findTestObject('RGS(M4)/M4_spin_backup', [('partner') : partner, ('env') : env, ('rgs_session_token') : GlobalVariable.rgs_session_token
                     , ('M4_Login_user_id') : GlobalVariable.M4_login_user_id]))
    
 }

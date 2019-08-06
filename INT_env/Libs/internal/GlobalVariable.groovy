@@ -302,127 +302,472 @@ public class GlobalVariable {
     /**
      * <p></p>
      */
-    public static Object reel3_sym1
+    public static Object free_spin_reel_counter
      
     /**
      * <p></p>
      */
-    public static Object reel3_sym2
+    public static Object M4_spin_round_id
      
     /**
      * <p></p>
      */
-    public static Object reel3_sym3
+    public static Object M4_round_total_win
      
     /**
      * <p></p>
      */
-    public static Object reel4_sym1
+    public static Object M4_round_balance
      
     /**
      * <p></p>
      */
-    public static Object reel4_sym2
+    public static Object M4_round_total_bet
      
     /**
      * <p></p>
      */
-    public static Object reel4_sym3
+    public static Object M4_round_bet_value
      
     /**
      * <p></p>
      */
-    public static Object reel5_sym1
+    public static Object M4_round_transaction_time
      
     /**
      * <p></p>
      */
-    public static Object reel5_sym2
+    public static Object M4_round_line
      
     /**
      * <p></p>
      */
-    public static Object reel5_sym3
+    public static Object M4_round_reel_wins
      
     /**
      * <p></p>
      */
-    public static Object reel3_sym1_w
+    public static Object M4_round_scatter_win
      
     /**
      * <p></p>
      */
-    public static Object reel3_sym2_w
+    public static Object M4_round_transaction_type
      
     /**
      * <p></p>
      */
-    public static Object reel3_sym3_w
+    public static Object M4_round_features_triggered
      
     /**
      * <p></p>
      */
-    public static Object reel4_sym1_w
+    public static Object M4_round_player_id
      
     /**
      * <p></p>
      */
-    public static Object reel4_sym2_w
+    public static Object M4_round_booster_type
      
     /**
      * <p></p>
      */
-    public static Object reel4_sym3_w
+    public static Object M4_old_bo_currency
      
     /**
      * <p></p>
      */
-    public static Object reel5_sym1_w
+    public static Object M4_old_bo_userid
      
     /**
      * <p></p>
      */
-    public static Object reel5_sym2_w
+    public static Object M4_old_bo_transaction_id
      
     /**
      * <p></p>
      */
-    public static Object reel5_sym3_w
+    public static Object M4_old_bo_date
      
     /**
      * <p></p>
      */
-    public static Object reel3_w
+    public static Object M4_old_bo_game_id
      
     /**
      * <p></p>
      */
-    public static Object reel4_w
+    public static Object M4_old_bo_tx_id
      
     /**
      * <p></p>
      */
-    public static Object reel5_w
+    public static Object M4_old_bo_causality
      
     /**
      * <p></p>
      */
-    public static Object reel3_has_wild
+    public static Object M4_old_bo_round_id
      
     /**
      * <p></p>
      */
-    public static Object reel5_has_wild
+    public static Object M4_old_bo_total_won
      
     /**
      * <p></p>
      */
-    public static Object reel4_has_wild
+    public static Object M4_old_bo_total_bet
      
     /**
      * <p></p>
      */
-    public static Object counter
+    public static Object M4_old_bo_balance
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reels
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reels0_symbols1
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_spin_reels
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_spin_reels_symbols
+     
+    /**
+     * <p></p>
+     */
+    public static Object wildList
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_spin_feature_triggered
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_currency
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_id
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_transaction_id
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reel_wins_symbol
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_features_type
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_features_complete
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_free_spins_left
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_total_free_spin_count
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_total_free_spin_win_amount
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_subfeatures
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_wild_multiplier
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_original_reels
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_swapped_reels
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_All_keys
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reel_wins_position
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_scatter_win_symbol
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_scatter_win_of_kind
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_scatter_win_line_config
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_scatter_win_prize
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_spin_total_scatter_wins
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_spin_reel_wins
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reel_wins_all_key
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_spin_total_bonus_win_this_round
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_spin_line_wins
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_object
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_spin_result_list
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_feature_state
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reels0_symbols2
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reels0_symbols3
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_feature_state_all
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reels_symbols
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_total_bonus_spins_int
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_wild_config
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_history_currency
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_history_causality
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_history_balance
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_history_round_id
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_history_total_bet
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reels1_symbols2
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reels1_symbols3
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reels1_symbols1
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reels4
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reels3
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reels2
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reels1
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reels_symbols_all
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_history_reel_symbol
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_history_reels
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_history_total_won
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_history_spin_transaction
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reel_wins_of_kind
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reel_wins_wild_win
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reel_wins_line_number
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reel_wins_line_config
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reel_wins_prize
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reel_wins_right_to_left
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_history_kind
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_history_line_win_symbol
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_history_prize
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_history_line_win_line
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_history_line_win_multiplier
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_history_multiplier
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_reels5
      
 
     static {
@@ -489,31 +834,100 @@ public class GlobalVariable {
             M4_spin_transaction_id = selectedVariables['M4_spin_transaction_id']
             M4_total_bonus_spins = selectedVariables['M4_total_bonus_spins']
             M4_reels_spin_result = selectedVariables['M4_reels_spin_result']
-            reel3_sym1 = selectedVariables['reel3_sym1']
-            reel3_sym2 = selectedVariables['reel3_sym2']
-            reel3_sym3 = selectedVariables['reel3_sym3']
-            reel4_sym1 = selectedVariables['reel4_sym1']
-            reel4_sym2 = selectedVariables['reel4_sym2']
-            reel4_sym3 = selectedVariables['reel4_sym3']
-            reel5_sym1 = selectedVariables['reel5_sym1']
-            reel5_sym2 = selectedVariables['reel5_sym2']
-            reel5_sym3 = selectedVariables['reel5_sym3']
-            reel3_sym1_w = selectedVariables['reel3_sym1_w']
-            reel3_sym2_w = selectedVariables['reel3_sym2_w']
-            reel3_sym3_w = selectedVariables['reel3_sym3_w']
-            reel4_sym1_w = selectedVariables['reel4_sym1_w']
-            reel4_sym2_w = selectedVariables['reel4_sym2_w']
-            reel4_sym3_w = selectedVariables['reel4_sym3_w']
-            reel5_sym1_w = selectedVariables['reel5_sym1_w']
-            reel5_sym2_w = selectedVariables['reel5_sym2_w']
-            reel5_sym3_w = selectedVariables['reel5_sym3_w']
-            reel3_w = selectedVariables['reel3_w']
-            reel4_w = selectedVariables['reel4_w']
-            reel5_w = selectedVariables['reel5_w']
-            reel3_has_wild = selectedVariables['reel3_has_wild']
-            reel5_has_wild = selectedVariables['reel5_has_wild']
-            reel4_has_wild = selectedVariables['reel4_has_wild']
-            counter = selectedVariables['counter']
+            free_spin_reel_counter = selectedVariables['free_spin_reel_counter']
+            M4_spin_round_id = selectedVariables['M4_spin_round_id']
+            M4_round_total_win = selectedVariables['M4_round_total_win']
+            M4_round_balance = selectedVariables['M4_round_balance']
+            M4_round_total_bet = selectedVariables['M4_round_total_bet']
+            M4_round_bet_value = selectedVariables['M4_round_bet_value']
+            M4_round_transaction_time = selectedVariables['M4_round_transaction_time']
+            M4_round_line = selectedVariables['M4_round_line']
+            M4_round_reel_wins = selectedVariables['M4_round_reel_wins']
+            M4_round_scatter_win = selectedVariables['M4_round_scatter_win']
+            M4_round_transaction_type = selectedVariables['M4_round_transaction_type']
+            M4_round_features_triggered = selectedVariables['M4_round_features_triggered']
+            M4_round_player_id = selectedVariables['M4_round_player_id']
+            M4_round_booster_type = selectedVariables['M4_round_booster_type']
+            M4_old_bo_currency = selectedVariables['M4_old_bo_currency']
+            M4_old_bo_userid = selectedVariables['M4_old_bo_userid']
+            M4_old_bo_transaction_id = selectedVariables['M4_old_bo_transaction_id']
+            M4_old_bo_date = selectedVariables['M4_old_bo_date']
+            M4_old_bo_game_id = selectedVariables['M4_old_bo_game_id']
+            M4_old_bo_tx_id = selectedVariables['M4_old_bo_tx_id']
+            M4_old_bo_causality = selectedVariables['M4_old_bo_causality']
+            M4_old_bo_round_id = selectedVariables['M4_old_bo_round_id']
+            M4_old_bo_total_won = selectedVariables['M4_old_bo_total_won']
+            M4_old_bo_total_bet = selectedVariables['M4_old_bo_total_bet']
+            M4_old_bo_balance = selectedVariables['M4_old_bo_balance']
+            M4_round_reels = selectedVariables['M4_round_reels']
+            M4_round_reels0_symbols1 = selectedVariables['M4_round_reels0_symbols1']
+            M4_spin_reels = selectedVariables['M4_spin_reels']
+            M4_spin_reels_symbols = selectedVariables['M4_spin_reels_symbols']
+            wildList = selectedVariables['wildList']
+            M4_spin_feature_triggered = selectedVariables['M4_spin_feature_triggered']
+            M4_round_currency = selectedVariables['M4_round_currency']
+            M4_round_id = selectedVariables['M4_round_id']
+            M4_round_transaction_id = selectedVariables['M4_round_transaction_id']
+            M4_round_reel_wins_symbol = selectedVariables['M4_round_reel_wins_symbol']
+            M4_round_features_type = selectedVariables['M4_round_features_type']
+            M4_round_features_complete = selectedVariables['M4_round_features_complete']
+            M4_round_free_spins_left = selectedVariables['M4_round_free_spins_left']
+            M4_round_total_free_spin_count = selectedVariables['M4_round_total_free_spin_count']
+            M4_round_total_free_spin_win_amount = selectedVariables['M4_round_total_free_spin_win_amount']
+            M4_round_subfeatures = selectedVariables['M4_round_subfeatures']
+            M4_round_wild_multiplier = selectedVariables['M4_round_wild_multiplier']
+            M4_round_original_reels = selectedVariables['M4_round_original_reels']
+            M4_round_swapped_reels = selectedVariables['M4_round_swapped_reels']
+            M4_round_All_keys = selectedVariables['M4_round_All_keys']
+            M4_round_reel_wins_position = selectedVariables['M4_round_reel_wins_position']
+            M4_round_scatter_win_symbol = selectedVariables['M4_round_scatter_win_symbol']
+            M4_round_scatter_win_of_kind = selectedVariables['M4_round_scatter_win_of_kind']
+            M4_round_scatter_win_line_config = selectedVariables['M4_round_scatter_win_line_config']
+            M4_round_scatter_win_prize = selectedVariables['M4_round_scatter_win_prize']
+            M4_spin_total_scatter_wins = selectedVariables['M4_spin_total_scatter_wins']
+            M4_spin_reel_wins = selectedVariables['M4_spin_reel_wins']
+            M4_round_reel_wins_all_key = selectedVariables['M4_round_reel_wins_all_key']
+            M4_spin_total_bonus_win_this_round = selectedVariables['M4_spin_total_bonus_win_this_round']
+            M4_spin_line_wins = selectedVariables['M4_spin_line_wins']
+            M4_round_object = selectedVariables['M4_round_object']
+            M4_round_spin_result_list = selectedVariables['M4_round_spin_result_list']
+            M4_round_feature_state = selectedVariables['M4_round_feature_state']
+            M4_round_reels0_symbols2 = selectedVariables['M4_round_reels0_symbols2']
+            M4_round_reels0_symbols3 = selectedVariables['M4_round_reels0_symbols3']
+            M4_round_feature_state_all = selectedVariables['M4_round_feature_state_all']
+            M4_round_reels_symbols = selectedVariables['M4_round_reels_symbols']
+            M4_total_bonus_spins_int = selectedVariables['M4_total_bonus_spins_int']
+            M4_round_wild_config = selectedVariables['M4_round_wild_config']
+            M4_history_currency = selectedVariables['M4_history_currency']
+            M4_history_causality = selectedVariables['M4_history_causality']
+            M4_history_balance = selectedVariables['M4_history_balance']
+            M4_history_round_id = selectedVariables['M4_history_round_id']
+            M4_history_total_bet = selectedVariables['M4_history_total_bet']
+            M4_round_reels1_symbols2 = selectedVariables['M4_round_reels1_symbols2']
+            M4_round_reels1_symbols3 = selectedVariables['M4_round_reels1_symbols3']
+            M4_round_reels1_symbols1 = selectedVariables['M4_round_reels1_symbols1']
+            M4_round_reels4 = selectedVariables['M4_round_reels4']
+            M4_round_reels3 = selectedVariables['M4_round_reels3']
+            M4_round_reels2 = selectedVariables['M4_round_reels2']
+            M4_round_reels1 = selectedVariables['M4_round_reels1']
+            M4_round_reels_symbols_all = selectedVariables['M4_round_reels_symbols_all']
+            M4_history_reel_symbol = selectedVariables['M4_history_reel_symbol']
+            M4_history_reels = selectedVariables['M4_history_reels']
+            M4_history_total_won = selectedVariables['M4_history_total_won']
+            M4_history_spin_transaction = selectedVariables['M4_history_spin_transaction']
+            M4_round_reel_wins_of_kind = selectedVariables['M4_round_reel_wins_of_kind']
+            M4_round_reel_wins_wild_win = selectedVariables['M4_round_reel_wins_wild_win']
+            M4_round_reel_wins_line_number = selectedVariables['M4_round_reel_wins_line_number']
+            M4_round_reel_wins_line_config = selectedVariables['M4_round_reel_wins_line_config']
+            M4_round_reel_wins_prize = selectedVariables['M4_round_reel_wins_prize']
+            M4_round_reel_wins_right_to_left = selectedVariables['M4_round_reel_wins_right_to_left']
+            M4_history_kind = selectedVariables['M4_history_kind']
+            M4_history_line_win_symbol = selectedVariables['M4_history_line_win_symbol']
+            M4_history_prize = selectedVariables['M4_history_prize']
+            M4_history_line_win_line = selectedVariables['M4_history_line_win_line']
+            M4_history_line_win_multiplier = selectedVariables['M4_history_line_win_multiplier']
+            M4_history_multiplier = selectedVariables['M4_history_multiplier']
+            M4_round_reels5 = selectedVariables['M4_round_reels5']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)
