@@ -100,21 +100,6 @@ for (int i=0; i < M4_round_features_triggered.size(); i++) {
 	}
 }
 
-
-//def multi1 = 1
-//for (int i=0; i < M4_round_features_triggered.size(); i++) {
-//	def trigger = M4_round_features_triggered[i]
-//	// only if type is WILD_MULTIPLIER and complete is true will enter
-//	if (trigger.type.equals("WILD_MULTIPLIER") && trigger.complete == true) {
-//		def feature_state = trigger.feature_state
-//		def wildConfig = feature_state.wild_config[4]
-//		def configValue = wildConfig[0].get('value')
-//		if (configValue != null && configValue != 0) {
-//						multi1 = multi1 * configValue
-//			
-//		}
-//	}
-//}
 			
 def config_value = multi * multi1
 

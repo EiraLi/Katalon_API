@@ -83,5 +83,6 @@ println("feature state is:"+feature_state)
 def feature_state_key = feature_state.keySet()
 ArrayList<String> feature_state_list = new ArrayList<String>(feature_state_key)
 
+println("feature_state_list is:"+feature_state_list)
 assert feature_state_list.size() == 0
 

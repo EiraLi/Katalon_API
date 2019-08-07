@@ -51,9 +51,9 @@ WS.sendRequestAndVerify(findTestObject('RGS(M4)/2_in_game_history_detail', [('pa
 //println("listOfValues is: "+listOfValues)
 //println("reel_wins_list"+reel_wins)
 //assert reel_wins.equals(listofKeys)
-println('GlobalVariable.M4_round_reel_wins_line_number is: ' + GlobalVariable.M4_round_reel_wins_line_number)
+println('GlobalVariable.M4_round_reel_wins_of_kind is: ' + GlobalVariable.M4_round_reel_wins_of_kind)
 
-println('GlobalVariable.M4_history_line_win_line is: ' + GlobalVariable.M4_history_line_win_line)
+println('GlobalVariable.M4_history_kind is: ' + GlobalVariable.M4_history_kind)
 
 println('GlobalVariable.M4_round_reel_wins_line_number is: ' + GlobalVariable.M4_round_reel_wins_line_number)
 

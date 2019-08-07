@@ -150,6 +150,9 @@ GlobalVariable.M4_history_reel_symbol = M4_history_reel_symbol
 def M4_history_reels = M4_history.game_history.reels
 GlobalVariable.M4_history_reels = M4_history_reels
 
+def M4_history_F_reels1 = M4_history.game_history.bonuses[1].extra_spins_data[0].reels
+GlobalVariable.M4_history_F_reels = M4_history_F_reels1
+
 def M4_history_multiplier = M4_history.game_history.bonuses[1].extra_spins_data[0].multiplier
 GlobalVariable.M4_history_multiplier = M4_history_multiplier
 

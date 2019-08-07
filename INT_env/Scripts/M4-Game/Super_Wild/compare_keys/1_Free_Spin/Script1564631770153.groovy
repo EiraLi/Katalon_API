@@ -46,14 +46,15 @@ NG_feature_trigger.add("subfeatures")
 NG_feature_trigger.add("type")
 
 
-def NG_reel = new ArrayList()
-NG_reel.add("symbols")
-
-
 def NG_feature_state = new ArrayList()
 NG_feature_state.add("free_spins_left")
 NG_feature_state.add("total_free_spin_count")
 NG_feature_state.add("total_free_spin_win_amount")
+
+//spin_results[0].reels
+def NG_reel = new ArrayList()
+NG_reel.add("symbols")
+
 
 def NG_reel_symbol1 = new ArrayList()
 NG_reel_symbol1.add("symbol")

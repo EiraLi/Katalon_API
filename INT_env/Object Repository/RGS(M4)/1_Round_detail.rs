@@ -143,6 +143,21 @@ GlobalVariable.M4_round_reels4 = M4_round_reels4
 def M4_round_reels5 = M4_round_detail.spin_results[0].reels[4]
 GlobalVariable.M4_round_reels5 = M4_round_reels5
 
+def M4_round_F_reels1 = M4_round_detail.spin_results[1].reels[0]
+GlobalVariable.M4_round_F_reels1 = M4_round_F_reels1
+
+def M4_round_F_reels2 = M4_round_detail.spin_results[1].reels[1]
+GlobalVariable.M4_round_F_reels2 = M4_round_F_reels2
+
+def M4_round_F_reels3 = M4_round_detail.spin_results[1].reels[2]
+GlobalVariable.M4_round_F_reels3 = M4_round_F_reels3
+
+def M4_round_F_reels4 = M4_round_detail.spin_results[1].reels[3]
+GlobalVariable.M4_round_F_reels4 = M4_round_F_reels4
+
+def M4_round_F_reels5 = M4_round_detail.spin_results[1].reels[4]
+GlobalVariable.M4_round_F_reels5 = M4_round_F_reels5
+
 def M4_round_reels0_symbols1 = M4_round_detail.spin_results[0].reels[0].symbols[0]
 GlobalVariable.M4_round_reels0_symbols1 = M4_round_reels0_symbols1
 def M4_round_reels0_symbols2 = M4_round_detail.spin_results[0].reels[0].symbols[1]

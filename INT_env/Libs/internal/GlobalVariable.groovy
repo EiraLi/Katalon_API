@@ -769,6 +769,36 @@ public class GlobalVariable {
      */
     public static Object M4_round_reels5
      
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_F_reels1
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_F_reels2
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_F_reels3
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_F_reels4
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_F_reels5
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_history_F_reels
+     
 
     static {
         try {
@@ -928,6 +958,12 @@ public class GlobalVariable {
             M4_history_line_win_multiplier = selectedVariables['M4_history_line_win_multiplier']
             M4_history_multiplier = selectedVariables['M4_history_multiplier']
             M4_round_reels5 = selectedVariables['M4_round_reels5']
+            M4_round_F_reels1 = selectedVariables['M4_round_F_reels1']
+            M4_round_F_reels2 = selectedVariables['M4_round_F_reels2']
+            M4_round_F_reels3 = selectedVariables['M4_round_F_reels3']
+            M4_round_F_reels4 = selectedVariables['M4_round_F_reels4']
+            M4_round_F_reels5 = selectedVariables['M4_round_F_reels5']
+            M4_history_F_reels = selectedVariables['M4_history_F_reels']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)

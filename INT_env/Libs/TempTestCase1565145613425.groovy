@@ -14,7 +14,7 @@ DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.m
 DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.cucumber.keyword.internal.CucumberDriverCleaner())
 
 
-RunConfiguration.setExecutionSettingFile('/var/folders/jv/m57cl6r527jgr1mjg5_9h8vw0000gn/T/Katalon/Test Cases/M4-Game/Super_Wild/compare_keys/2_reel_wins/20190806_205843/execution.properties')
+RunConfiguration.setExecutionSettingFile('/var/folders/jv/m57cl6r527jgr1mjg5_9h8vw0000gn/T/Katalon/Test Cases/M4-Game/Super_Wild/compare_keys/2_reel_wins/20190807_103959/execution.properties')
 
 TestCaseMain.beforeStart()
 

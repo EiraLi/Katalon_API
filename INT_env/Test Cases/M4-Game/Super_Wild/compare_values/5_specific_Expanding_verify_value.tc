@@ -3,49 +3,49 @@
    <description>https://staroad.atlassian.net/wiki/spaces/IPD/pages/461176986/NuRgs+API+Features+Use-case+M4-0012+Super+Wilds
 
 #1 situation</description>
-   <name>6_specific_Multiplier_verify_value</name>
+   <name>5_specific_Expanding_verify_value</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>9ccc087b-7ed3-4f5f-aad2-3f9f3e294bc7</testCaseGuid>
+   <testCaseGuid>ad594759-4fde-4118-a275-741801eb0c41</testCaseGuid>
    <variable>
       <defaultValue>findTestData('INT_data').getValue(2, 1)</defaultValue>
       <description></description>
-      <id>53ca85f7-0969-49a1-b5ce-342ae42c9c2b</id>
+      <id>5011493d-7166-4648-a850-31a45e87a17d</id>
       <masked>false</masked>
       <name>Partner</name>
    </variable>
    <variable>
       <defaultValue>findTestData('INT_data').getValue(4, 1)</defaultValue>
       <description></description>
-      <id>1fc1b3a1-c239-4677-971c-5764b300d806</id>
+      <id>d263c1d1-5d24-4eb3-b73d-75012907be6a</id>
       <masked>false</masked>
       <name>Userid</name>
    </variable>
    <variable>
       <defaultValue>findTestData('INT_data').getValue(5, 1)</defaultValue>
       <description></description>
-      <id>830049e5-47d6-43bf-a08c-710c56b418bf</id>
+      <id>b305db8e-60c2-4208-ad1b-ea0a8325be65</id>
       <masked>false</masked>
       <name>Game_code</name>
    </variable>
    <variable>
       <defaultValue>findTestData('INT_data').getValue(10, 1)</defaultValue>
       <description></description>
-      <id>e28958a6-121b-4a84-91f7-69244f7c4aad</id>
+      <id>56d87460-7f25-43ac-9dd6-e518bb88beee</id>
       <masked>false</masked>
       <name>url_krug_gw</name>
    </variable>
    <variable>
       <defaultValue>findTestData('INT_data').getValue(3, 1)</defaultValue>
       <description></description>
-      <id>2850ea1e-40da-4eef-b24f-f8d8acd9a4ca</id>
+      <id>6ce1966f-9934-4bdf-a217-c2f91daa0bad</id>
       <masked>false</masked>
       <name>secret_key</name>
    </variable>
    <variable>
       <defaultValue>findTestData('INT_data').getValue(14, 1)</defaultValue>
       <description></description>
-      <id>8cf891a1-5602-4f1e-8785-cb635808d91f</id>
+      <id>0b4b987b-9999-48a7-8d19-fee63703a20e</id>
       <masked>false</masked>
       <name>M4_recorder</name>
    </variable>
