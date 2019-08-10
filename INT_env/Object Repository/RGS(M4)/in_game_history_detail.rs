@@ -108,7 +108,7 @@ def M4_history_round_id = M4_history.game_history.round_id
 GlobalVariable.M4_history_round_id = M4_history_round_id
 
 def M4_history_game_total_won = M4_history.game_history.total_won
-//GlobalVariable.M4_history_total_won = M4_history_total_won
+GlobalVariable.M4_history_game_total_won = M4_history_game_total_won
 
 def M4_history_game_total_bet = M4_history.game_history.total_bet
 GlobalVariable.M4_history_total_bet = M4_history_game_total_bet

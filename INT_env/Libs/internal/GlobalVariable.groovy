@@ -799,6 +799,16 @@ public class GlobalVariable {
      */
     public static Object M4_history_F_reels
      
+    /**
+     * <p></p>
+     */
+    public static Object M4_round_spin_result1
+     
+    /**
+     * <p></p>
+     */
+    public static Object M4_history_game_total_won
+     
 
     static {
         try {
@@ -964,6 +974,8 @@ public class GlobalVariable {
             M4_round_F_reels4 = selectedVariables['M4_round_F_reels4']
             M4_round_F_reels5 = selectedVariables['M4_round_F_reels5']
             M4_history_F_reels = selectedVariables['M4_history_F_reels']
+            M4_round_spin_result1 = selectedVariables['M4_round_spin_result1']
+            M4_history_game_total_won = selectedVariables['M4_history_game_total_won']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)

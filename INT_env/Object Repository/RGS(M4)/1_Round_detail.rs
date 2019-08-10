@@ -234,6 +234,9 @@ GlobalVariable.M4_round_features_type = M4_round_features_type
 def M4_round_scatter_win =  M4_round_detail.spin_results[0].scatter_win
 GlobalVariable.M4_round_scatter_win = M4_round_scatter_win
 
+def M4_round_spin_result1 = M4_round_detail.spin_results[1]
+GlobalVariable.M4_round_spin_result1 = M4_round_spin_result1
+
 
 
 </verificationScript>

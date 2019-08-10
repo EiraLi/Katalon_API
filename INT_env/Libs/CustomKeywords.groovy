@@ -20,10 +20,38 @@ import org.apache.poi.ss.usermodel.Row
 import java.util.Map
 
 
-def static "com.kms.katalon.keyword.excel.ExcelKeywords.createExcelFile"(
+def static "com.kms.katalon.keyword.excel.ExcelKeywords.saveWorkbook"(
+    	String filePath	
+     , 	Workbook workbook	) {
+    (new com.kms.katalon.keyword.excel.ExcelKeywords()).saveWorkbook(
+        	filePath
+         , 	workbook)
+}
+
+def static "com.kms.katalon.keyword.excel.ExcelKeywords.createWorkbook"(
     	String filePath	) {
-    (new com.kms.katalon.keyword.excel.ExcelKeywords()).createExcelFile(
+    (new com.kms.katalon.keyword.excel.ExcelKeywords()).createWorkbook(
         	filePath)
+}
+
+def static "com.kms.katalon.keyword.excel.ExcelKeywords.getWorkbook"(
+    	String filePath	) {
+    (new com.kms.katalon.keyword.excel.ExcelKeywords()).getWorkbook(
+        	filePath)
+}
+
+def static "com.kms.katalon.keyword.excel.ExcelKeywords.createExcelSheets"(
+    	Workbook workbook	
+     , 	java.util.List<String> sheetNames	) {
+    (new com.kms.katalon.keyword.excel.ExcelKeywords()).createExcelSheets(
+        	workbook
+         , 	sheetNames)
+}
+
+def static "com.kms.katalon.keyword.excel.ExcelKeywords.getSheetNames"(
+    	Workbook workbook	) {
+    (new com.kms.katalon.keyword.excel.ExcelKeywords()).getSheetNames(
+        	workbook)
 }
 
 def static "com.kms.katalon.keyword.excel.ExcelKeywords.createExcelSheet"(
@@ -40,38 +68,10 @@ def static "com.kms.katalon.keyword.excel.ExcelKeywords.createExcelSheet"(
          , 	sheetName)
 }
 
-def static "com.kms.katalon.keyword.excel.ExcelKeywords.getSheetNames"(
-    	Workbook workbook	) {
-    (new com.kms.katalon.keyword.excel.ExcelKeywords()).getSheetNames(
-        	workbook)
-}
-
-def static "com.kms.katalon.keyword.excel.ExcelKeywords.createExcelSheets"(
-    	Workbook workbook	
-     , 	java.util.List<String> sheetNames	) {
-    (new com.kms.katalon.keyword.excel.ExcelKeywords()).createExcelSheets(
-        	workbook
-         , 	sheetNames)
-}
-
-def static "com.kms.katalon.keyword.excel.ExcelKeywords.getWorkbook"(
+def static "com.kms.katalon.keyword.excel.ExcelKeywords.createExcelFile"(
     	String filePath	) {
-    (new com.kms.katalon.keyword.excel.ExcelKeywords()).getWorkbook(
+    (new com.kms.katalon.keyword.excel.ExcelKeywords()).createExcelFile(
         	filePath)
-}
-
-def static "com.kms.katalon.keyword.excel.ExcelKeywords.createWorkbook"(
-    	String filePath	) {
-    (new com.kms.katalon.keyword.excel.ExcelKeywords()).createWorkbook(
-        	filePath)
-}
-
-def static "com.kms.katalon.keyword.excel.ExcelKeywords.saveWorkbook"(
-    	String filePath	
-     , 	Workbook workbook	) {
-    (new com.kms.katalon.keyword.excel.ExcelKeywords()).saveWorkbook(
-        	filePath
-         , 	workbook)
 }
 
 def static "com.kms.katalon.keyword.excel.ExcelKeywords.setValueToCellByIndex"(
@@ -97,6 +97,14 @@ def static "com.kms.katalon.keyword.excel.ExcelKeywords.setValueToCellByAddress"
 }
 
 def static "com.kms.katalon.keyword.excel.ExcelKeywords.getExcelSheet"(
+    	String filePath	
+     , 	int sheetIndex	) {
+    (new com.kms.katalon.keyword.excel.ExcelKeywords()).getExcelSheet(
+        	filePath
+         , 	sheetIndex)
+}
+
+def static "com.kms.katalon.keyword.excel.ExcelKeywords.getExcelSheet"(
     	Workbook wbs	
      , 	String sheetName	) {
     (new com.kms.katalon.keyword.excel.ExcelKeywords()).getExcelSheet(
@@ -114,14 +122,6 @@ def static "com.kms.katalon.keyword.excel.ExcelKeywords.getExcelSheet"(
     	Workbook wbs	) {
     (new com.kms.katalon.keyword.excel.ExcelKeywords()).getExcelSheet(
         	wbs)
-}
-
-def static "com.kms.katalon.keyword.excel.ExcelKeywords.getExcelSheet"(
-    	String filePath	
-     , 	int sheetIndex	) {
-    (new com.kms.katalon.keyword.excel.ExcelKeywords()).getExcelSheet(
-        	filePath
-         , 	sheetIndex)
 }
 
 def static "com.kms.katalon.keyword.excel.ExcelKeywords.getExcelSheetByName"(
